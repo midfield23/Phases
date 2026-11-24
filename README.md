@@ -1,4 +1,4 @@
-# Phases: channel strip, EQ and compressor favourites for LUNA (prototype)
+# Phases: channel strip, EQ and compressor favourites for LUNA
 
 Swap the channel strip on a LUNA track for another one and carry the settings across.
 
