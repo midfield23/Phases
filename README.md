@@ -1,8 +1,6 @@
 # Phases: channel strip, EQ and compressor favourites for LUNA (prototype)
 
-Swap the channel strip on a LUNA track for another one and carry the settings across, the way
-Rea-Sixty's Favourites does in REAPER. Command-line tools for now; the logic is meant to move
-into a LUNA add-on panel once it holds up.
+Swap the channel strip on a LUNA track for another one and carry the settings across.
 
 ## Setup
 
