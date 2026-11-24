@@ -1,0 +1,21 @@
+{
+  "pluginId": "com.Brwx.au.aufx_DaB1",
+  "name": "Dangerous BAX EQ Mix",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: every knob reports only its 0-1 position, so values go through a table measured with tools/build-table.mjs.",
+    "Two shelves and two filters: low and high are shelves (fixed)."
+  ],
+  "controls": {
+    "out":      { "param": "Output Level" },
+    "hpf":      { "param": "Low Cut Frequency", "offText": "Out" },
+    "lpf":      { "param": "High Cut Frequency", "offText": "Out" },
+    "lf_gain":  { "param": "Low Shelf Level" },
+    "lf_freq":  { "param": "Low Shelf Frequency" },
+    "lf_type":  { "fixed": "shelf" },
+    "hf_gain":  { "param": "High Shelf Level" },
+    "hf_freq":  { "param": "High Shelf Frequency" },
+    "hf_type":  { "fixed": "shelf" }
+  }
+}

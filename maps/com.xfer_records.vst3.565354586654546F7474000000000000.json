@@ -1,0 +1,15 @@
+{
+  "pluginId": "com.xfer_records.vst3.565354586654546F7474000000000000",
+  "name": "OTT",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are 0-1 positions, read through a table measured with tools/build-table.mjs.",
+    "A multiband upward/downward compressor: only Depth (as mix) and the input and output gains carry. Time, the band thresholds and gains, and the up/down strengths come back as you left them."
+  ],
+  "controls": {
+    "in_trim":  { "param": "In Gain" },
+    "out":      { "param": "Out Gain" },
+    "comp_mix": { "param": "Depth" }
+  }
+}

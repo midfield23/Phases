@@ -1,0 +1,17 @@
+{
+  "pluginId": "com.Brwx.au.aufx_LBp2",
+  "name": "Lindell 6X-500",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: every knob reports only its 0-1 position, so values go through a table measured with tools/build-table.mjs.",
+    "A Pultec-style EQ: boost knobs and the input/output are 0-10 positions, not dB, so only the filters, polarity and EQ in/out carry.",
+    "'Low filter on' is taken to switch the lowpass and 'High filter on' the highpass (the order they are listed in). Both filters measure 20 Hz to 20 kHz, so the table can't confirm it: check by ear."
+  ],
+  "controls": {
+    "polarity":  { "param": "Polarity", "states": {"off": "Off", "on": "On"} },
+    "eq_in":     { "param": "EQ on", "states": {"off": "Off", "on": "On"} },
+    "hpf":       { "param": "Highpass frequency", "enable": {"param": "High filter on", "off": "Off", "on": "On"} },
+    "lpf":       { "param": "Lowpass frequency", "enable": {"param": "Low filter on", "off": "Off", "on": "On"} }
+  }
+}

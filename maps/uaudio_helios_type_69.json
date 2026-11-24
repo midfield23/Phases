@@ -1,0 +1,20 @@
+{
+  "pluginId": "uaudio_helios_type_69",
+  "name": "Helios 69",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Mid Gain and Level are measured (table: true).",
+    "Mid Gain is a size; Mid Type says boost (Peak) or cut (Trough), handled like a range switch of x -1.",
+    "Bass is one knob that mixes boost frequencies and cut amounts: not mapped yet."
+  ],
+  "controls": {
+    "out":       { "param": "Level", "table":true },
+    "polarity":  { "param": "Polarity", "states": {"off": "Normal", "on": "Inverted"} },
+    "eq_in":     { "param": "EQ In", "states": {"off": "Byp", "on": "In"} },
+    "hf_gain":   { "param": "Hi Shelf Gain" },
+    "hf_type":   { "fixed": "shelf" },
+    "hmf_gain":  { "param": "Mid Gain", "table":true, "range": {"param": "Mid Type", "off": "Peak", "on": "Trough", "by": -1} },
+    "hmf_freq":  { "param": "Mid Freq" }
+  }
+}

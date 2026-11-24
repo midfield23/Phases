@@ -1,0 +1,31 @@
+{
+  "pluginId": "uaudio_la_6176",
+  "name": "LA-6176",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Stepped knobs report a step number as `real`, so steps are read from their labels.",
+    "Only the 1176 side of the dynamics carries (its ratio), and only in 1176 mode: the 1176 attack/release/input knobs and the LA-2A peak reduction are 0-10 positions, not units. Output Level is a 0-10 knob too, not mapped.",
+    "The 610 EQ bands are shelves (fixed)."
+  ],
+  "when": {
+    "dyn": {
+      "param": "Dyn Mode",
+      "is": "1176"
+    }
+  },
+  "controls": {
+    "in_trim":     { "param": "Input Gain" },
+    "polarity":    { "param": "Polarity", "states": {"off": "In 0", "on": "Out 180"} },
+    "hpf":         { "param": "Cut Filter", "offText": "Off" },
+    "eq_in":       { "param": "EQ Bypass", "states": {"off": "EQ Byp", "on": "EQ In"} },
+    "hf_gain":     { "param": "EQ Hi Gain" },
+    "hf_freq":     { "param": "EQ Hi Freq" },
+    "hf_type":     { "fixed": "shelf" },
+    "lf_freq":     { "param": "EQ Lo Freq" },
+    "lf_gain":     { "param": "EQ Lo Gain" },
+    "lf_type":     { "fixed": "shelf" },
+    "comp_in":     { "param": "Dyn Bypass", "states": {"off": "Dyn Byp", "on": "Dyn In"} },
+    "comp_ratio":  { "param": "1176 Ratio", "texts": {"ALL": "inf"} }
+  }
+}

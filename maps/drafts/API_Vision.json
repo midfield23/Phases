@@ -1,0 +1,63 @@
+{
+  "pluginId": "TODO: LUNA plugin id (probe-strips.mjs prints it)",
+  "name": "API Vision",
+  "domain": "cs",
+  "mode": "TODO: \"real\" for UA plugins, \"table\" for others",
+  "reaSixty": {
+    "match": "UADx API Vision Channel Strip (Universal Audio",
+    "original": "VST3: UADx API Vision Channel Strip (Universal Audio (UADx))"
+  },
+  "notes": [
+    "Drafted from Rea-Sixty user_plugins.json. Check every line against the plugin in LUNA.",
+    "Add switches (eq_in, comp_in, hf_type …) with \"states\", and \"scale\": 1000 for knobs shown in kHz.",
+    "CHECK: \"215 LP Filter\" feeds lpf, hf_freq, hmf_gain; keep only the control it really is",
+    "CHECK: \"215 HP Filter\" feeds hpf, hf_gain; keep only the control it really is",
+    "CHECK: \"235 Release\" feeds gate_release, gate_hold; keep only the control it really is"
+  ],
+  "controls": {
+    "lpf": {
+      "param": "215 LP Filter"
+    },
+    "hpf": {
+      "param": "215 HP Filter"
+    },
+    "hf_gain": {
+      "param": "215 HP Filter"
+    },
+    "hf_freq": {
+      "param": "215 LP Filter"
+    },
+    "hmf_gain": {
+      "param": "215 LP Filter"
+    },
+    "gate_release": {
+      "param": "235 Release"
+    },
+    "gate_thresh": {
+      "param": "235 Thresh"
+    },
+    "gate_hold": {
+      "param": "235 Release"
+    },
+    "gate_range": {
+      "param": "235 Depth"
+    },
+    "comp_ratio": {
+      "param": "225 Ratio"
+    },
+    "comp_thresh": {
+      "param": "225 Thresh"
+    },
+    "comp_release": {
+      "param": "225 Release"
+    },
+    "comp_in": {
+      "param": "225 On"
+    }
+  },
+  "unmappedReaSixtyControls": [
+    "linkIdx 23 -> Wet",
+    "linkIdx 0 -> Power",
+    "linkIdx 8 -> 215 LP Filter"
+  ]
+}

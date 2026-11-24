@@ -1,0 +1,20 @@
+{
+  "pluginId": "com.SSLN.au.aufx_NBC2",
+  "name": "SSL Native Bus Compressor 2",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are 0-1 positions, read through a table measured with tools/build-table.mjs.",
+    "The display has no units: Threshold and Makeup are dB, Attack is ms (scale 0.001 makes it seconds), Release is seconds. AUTO release carries as auto. The top ratio, X, is an SSL-only setting and isn't carried.",
+    "Mix Lock, GroupSense, side-chain and oversampling come back as you left them."
+  ],
+  "controls": {
+    "comp_in":      { "param": "Comp Bypass", "states": {"on": "Off", "off": "On"} },
+    "comp_thresh":  { "param": "Threshold" },
+    "comp_ratio":   { "param": "Ratio", "stepped": true, "texts": {"X": "skip"} },
+    "comp_attack":  { "param": "Attack", "stepped": true, "scale": 0.001 },
+    "comp_release": { "param": "Release", "stepped": true, "texts": {"AUTO": "auto"} },
+    "out":          { "param": "Makeup Gain" },
+    "comp_mix":     { "param": "Dry/Wet Mix" }
+  }
+}

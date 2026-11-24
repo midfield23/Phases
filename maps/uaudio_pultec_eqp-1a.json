@@ -1,0 +1,13 @@
+{
+  "pluginId": "uaudio_pultec_eqp-1a",
+  "name": "Pultec EQP-1A",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Boost, cut and bandwidth are 0-10 knob positions, not dB, so the EQ itself does not carry: only in/out and the output level. Switching through it keeps the other strips' EQ remembered."
+  ],
+  "controls": {
+    "eq_in":  { "param": "Enable", "states": {"off": "Out", "on": "In"} },
+    "out":    { "param": "Output", "table": true }
+  }
+}

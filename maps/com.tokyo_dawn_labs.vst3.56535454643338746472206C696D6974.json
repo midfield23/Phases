@@ -1,0 +1,18 @@
+{
+  "pluginId": "com.tokyo_dawn_labs.vst3.56535454643338746472206C696D6974",
+  "name": "TDR Limiter 6 GE",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are 0-1 positions, read through a table measured with tools/build-table.mjs.",
+    "Only the compressor module is mapped: threshold, ratio, attack and release (ms, scale 0.001 makes them seconds), its gain as make-up, and Compressor Enabled as in/out. The peak limiter, HF limiter, clipper and output stages come back as you left them."
+  ],
+  "controls": {
+    "comp_in":      { "param": "Compressor Enabled", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":  { "param": "Comp Thresh" },
+    "comp_ratio":   { "param": "Comp Ratio" },
+    "comp_attack":  { "param": "Comp Attack", "scale": 0.001 },
+    "comp_release": { "param": "Comp Release", "scale": 0.001 },
+    "out":          { "param": "Comp Gain" }
+  }
+}

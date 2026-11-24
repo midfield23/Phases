@@ -1,0 +1,15 @@
+{
+  "pluginId": "uaudio_empirical_labs_fatso_sr",
+  "name": "FATSO Sr",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Attack and release are stepped (channel 1, with the controls linked); \"Default\" (the Comp mode's own timing) isn't carried, so arriving here picks the nearest fixed step. The other controls come back as you left them when you return to the FATSO Sr.",
+    "Power stands in for the compressor's in/out."
+  ],
+  "controls": {
+    "comp_in":      { "param": "Power", "states": {"off": "Off", "on": "On"} },
+    "comp_attack":  { "param": "Ch1Attack", "texts": {"Default": "skip"} },
+    "comp_release": { "param": "Ch1Release", "texts": {"Default": "skip"} }
+  }
+}

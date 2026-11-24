@@ -1,0 +1,19 @@
+{
+  "pluginId": "com.soundtoys.vst3.56535453745371736965710000000000",
+  "name": "Sie-Q",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs.",
+    "Three bands: low and high are fixed shelves (their frequencies aren't adjustable, so not carried), the mid is a bell with a frequency. Gains display without units (dB). Bypass Off means the EQ is in. Drive is not carried. The mid frequency is stepped. Its display shows the previous value while the table is built: build the table with --lag."
+  ],
+  "controls": {
+    "eq_in":     { "param": "Bypass", "states": {"off": "On", "on": "Off"} },
+    "lf_gain":   { "param": "Low Gain" },
+    "lf_type":   { "fixed": "shelf" },
+    "hmf_gain":  { "param": "Mid Gain" },
+    "hmf_freq":  { "param": "Mid Frequency", "stepped": true },
+    "hf_gain":   { "param": "High Gain" },
+    "hf_type":   { "fixed": "shelf" }
+  }
+}

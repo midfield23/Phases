@@ -1,0 +1,16 @@
+{
+  "pluginId": "com.klanghelm.vst3.5653544D4A55436D6A75630000000000",
+  "name": "MJUC",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are 0-1 positions, read through a table measured with tools/build-table.mjs.",
+    "Ratio, make-up and mix carry. Compress is a drive amount (not a threshold), and attack, recovery, timing, model and the tone controls are MJUC settings: they come back as you left them. Mix shows WET/DRY at its ends.",
+    "No in/out: MJUC has two parameters both called Bypass."
+  ],
+  "controls": {
+    "out":         { "param": "Makeup" },
+    "comp_ratio":  { "param": "Ratio", "stepped": true, "texts": {"Limit": "inf"} },
+    "comp_mix":    { "param": "Mix", "texts": {"WET": 100, "DRY": 0} }
+  }
+}

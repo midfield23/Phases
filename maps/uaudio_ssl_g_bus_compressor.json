@@ -1,0 +1,19 @@
+{
+  "pluginId": "uaudio_ssl_g_bus_compressor",
+  "name": "SSL G Bus Compressor",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23 (UADx). Attack, release and ratio are stepped and read from their labels; Auto release carries as auto. Threshold, make-up and mix report the 0-1 position, so they're read through a measured table.",
+    "Power stands in for the compressor's in/out. Fade and the side-chain filter come back as you left them."
+  ],
+  "controls": {
+    "comp_in":      { "param": "Power", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":  { "param": "Thresh", "table": true },
+    "comp_ratio":   { "param": "Ratio" },
+    "comp_attack":  { "param": "Attack" },
+    "comp_release": { "param": "Release", "texts": {"Auto": "auto"} },
+    "out":          { "param": "Make Up", "table": true },
+    "comp_mix":     { "param": "Mix", "table": true }
+  }
+}

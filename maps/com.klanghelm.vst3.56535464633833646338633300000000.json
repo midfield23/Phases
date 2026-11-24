@@ -1,0 +1,20 @@
+{
+  "pluginId": "com.klanghelm.vst3.56535464633833646338633300000000",
+  "name": "DC8C3",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are 0-1 positions, read through a table measured with tools/build-table.mjs.",
+    "Threshold, ratio, the main Attack and Release, mix and in/out gain carry. The per-mode attack/release knobs (SMOOTH, PUNCH...), saturation, shape, sidechain filters and Easy-mode settings come back as you left them. Check that Attack/Release are the ones that act in the mode you use.",
+    "No in/out: DC8C3 has two parameters both called Bypass."
+  ],
+  "controls": {
+    "in_trim":      { "param": "InputGain" },
+    "out":          { "param": "OutputGain" },
+    "comp_thresh":  { "param": "Threshold" },
+    "comp_ratio":   { "param": "Ratio" },
+    "comp_attack":  { "param": "Attack" },
+    "comp_release": { "param": "Release" },
+    "comp_mix":     { "param": "Mix" }
+  }
+}

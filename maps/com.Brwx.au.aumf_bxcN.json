@@ -1,0 +1,43 @@
+{
+  "pluginId": "com.Brwx.au.aumf_bxcN",
+  "name": "bx_console N",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are positions, read through a table measured with tools/build-table.mjs. Laid out like the other bx_console maps.",
+    "HPF x3 and LPF /3 are left as you set them (the filters carry within their normal ranges). The compressor/limiter's threshold-range switch, 2nd threshold, make-up and side-chain HP, the gate's key/invert/hysteresis, and the band Q switches on the shelves come back as you left them.",
+    "Switch labels confirmed by build-table on 2026-11-23. Auto release carries as auto; EQ Position In DynSC reads as nothing."
+  ],
+  "controls": {
+    "in_trim":      { "param": "In Gain" },
+    "out":          { "param": "Out Gain" },
+    "polarity":     { "param": "Phase", "states": {"off": "Off", "on": "On"} },
+    "dyn_pre_eq":   { "param": "EQ Position", "states": {"off": "Pre Dyn", "on": "Post Dyn"} },
+    "hpf":          { "param": "HPF Frequency", "enable": {"param": "HPF On/Off", "off": "Off", "on": "On"} },
+    "lpf":          { "param": "LPF Frequency", "enable": {"param": "LPF On/Off", "off": "Off", "on": "On"} },
+    "eq_in":        { "param": "EQ On/Off", "states": {"off": "Off", "on": "On"} },
+    "hf_gain":      { "param": "EQ High Gain" },
+    "hf_freq":      { "param": "EQ High Frequency" },
+    "hf_type":      { "param": "EQ High Shelf", "states": {"shelf": "On", "bell": "Off"} },
+    "hmf_gain":     { "param": "EQ High Mid Gain" },
+    "hmf_freq":     { "param": "EQ High Mid Frequency" },
+    "hmf_q":        { "param": "EQ High Mid Q" },
+    "lmf_gain":     { "param": "EQ Low Mid Gain" },
+    "lmf_freq":     { "param": "EQ Low Mid Frequency" },
+    "lmf_q":        { "param": "EQ Low Mid Q" },
+    "lf_gain":      { "param": "EQ Low Gain" },
+    "lf_freq":      { "param": "EQ Low Frequency" },
+    "lf_type":      { "param": "EQ Low Shelf", "states": {"shelf": "On", "bell": "Off"} },
+    "comp_in":      { "param": "LC On/Off", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":  { "param": "LC Threshold" },
+    "comp_ratio":   { "param": "LC Ratio", "texts": {"Lim": "inf"} },
+    "comp_release": { "param": "LC Release", "texts": {"Auto": "auto"} },
+    "comp_fast":    { "param": "LC Attack", "states": {"off": "Slow", "on": "Fast"} },
+    "comp_mix":     { "param": "LC Mix" },
+    "gate_in":      { "param": "GE On/Off", "states": {"off": "Off", "on": "On"} },
+    "gate_thresh":  { "param": "GE Threshold" },
+    "gate_range":   { "param": "GE Range" },
+    "gate_release": { "param": "GE Release" },
+    "gate_fast":    { "param": "GE Attack", "states": {"off": "Slow", "on": "Fast"} }
+  }
+}

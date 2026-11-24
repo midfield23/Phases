@@ -1,0 +1,55 @@
+{
+  "pluginId": "com.HRSN.au.aufx_Habf",
+  "name": "Harrison Bass Flow",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs.",
+    "Five EQ bands, each with its own shape switch (flexible bands: the bands in use become the shared low / low mid / high mid / high). Shape labels confirmed by the table of 2026-11-23 (Notch and Search are not carried). Filter A is the high-pass and B the low-pass.",
+    "The compressor's threshold and release carry (it has no ratio knob). Bass Character, Chorus and the band sensitivities are not mapped."
+  ],
+  "controls": {
+    "in_trim":       { "param": "Master Input Trim" },
+    "out":           { "param": "Master Output Trim" },
+    "polarity":      { "param": "Polarity", "states": {"off": "Off", "on": "On"} },
+    "eq_in":         { "param": "EQ In", "states": {"off": "Off", "on": "On"} },
+    "hpf":           { "param": "EQ Filter A Frequency", "enable": {"param": "EQ Filter A", "off": "Off", "on": "On"} },
+    "lpf":           { "param": "EQ Filter B Frequency", "enable": {"param": "EQ Filter B", "off": "Off", "on": "On"} },
+    "lf_gain":       { "flex": true },
+    "lf_freq":       { "flex": true },
+    "lf_type":       { "flex": true },
+    "lmf_gain":      { "flex": true },
+    "lmf_freq":      { "flex": true },
+    "lmf_q":         { "flex": true },
+    "hmf_gain":      { "flex": true },
+    "hmf_freq":      { "flex": true },
+    "hmf_q":         { "flex": true },
+    "hf_gain":       { "flex": true },
+    "hf_freq":       { "flex": true },
+    "hf_type":       { "flex": true },
+    "comp_in":       { "param": "Compressor In", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":   { "param": "Compressor Threshold" },
+    "comp_release":  { "param": "Compressor Release" }
+  },
+  "flex": {
+      "cuts": false,
+      "tables": {
+          "freq": "EQ Band 1 Frequency",
+          "gain": "EQ Band 1 Gain",
+          "q": "EQ Band 1 Q",
+          "shape": "EQ Band 1 Shape"
+      },
+      "shapes": {
+          "bell": "Bell",
+          "lowShelf": "Low Shelf",
+          "highShelf": "High Shelf"
+      },
+    "bands": [
+      {"on": "EQ Band 1 In", "freq": "EQ Band 1 Frequency", "gain": "EQ Band 1 Gain", "q": "EQ Band 1 Q", "shape": "EQ Band 1 Shape"},
+      {"on": "EQ Band 2 In", "freq": "EQ Band 2 Frequency", "gain": "EQ Band 2 Gain", "q": "EQ Band 2 Q", "shape": "EQ Band 2 Shape"},
+      {"on": "EQ Band 3 In", "freq": "EQ Band 3 Frequency", "gain": "EQ Band 3 Gain", "q": "EQ Band 3 Q", "shape": "EQ Band 3 Shape"},
+      {"on": "EQ Band 4 In", "freq": "EQ Band 4 Frequency", "gain": "EQ Band 4 Gain", "q": "EQ Band 4 Q", "shape": "EQ Band 4 Shape"},
+      {"on": "EQ Band 5 In", "freq": "EQ Band 5 Frequency", "gain": "EQ Band 5 Gain", "q": "EQ Band 5 Q", "shape": "EQ Band 5 Shape"}
+    ]
+  }
+}

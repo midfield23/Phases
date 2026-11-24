@@ -1,0 +1,28 @@
+{
+  "pluginId": "com.carve_audio.vst3.ABCDEF019182FAEB4372764F42757359",
+  "name": "Busboy",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are 0-1 positions, read through a table measured with tools/build-table.mjs.",
+    "Two shelves, filters, a compressor and a limiter: a channel strip for the panel (it serves both rows). Output is the final output; EQ Output, the limiter and oversampling come back as you left them.",
+    "Input and Output run -64 to +12 dB."
+  ],
+  "controls": {
+    "in_trim":     { "param": "Input" },
+    "out":         { "param": "Output" },
+    "dyn_pre_eq":  { "param": "Compression Pre/Post", "states": {"on": "Pre EQ", "off": "Post EQ"} },
+    "hpf":         { "param": "HPF", "offText": "OFF" },
+    "lpf":         { "param": "LPF", "offText": "OFF" },
+    "hf_gain":     { "param": "High Shelf Gain" },
+    "hf_freq":     { "param": "High shelf Frequency" },
+    "hf_type":     { "fixed": "shelf" },
+    "lf_gain":     { "param": "Low Shelf Gain" },
+    "lf_freq":     { "param": "Low Shelf Frequency" },
+    "lf_type":     { "fixed": "shelf" },
+    "comp_in":     { "param": "Compression On/Off", "states": {"off": "OFF", "on": "ON"} },
+    "comp_thresh": { "param": "Compress Threshold" },
+    "comp_ratio":  { "param": "Ratio", "stepped": true },
+    "comp_mix":    { "param": "Compression Mix" }
+  }
+}

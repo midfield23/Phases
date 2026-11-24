@@ -1,0 +1,16 @@
+{
+  "pluginId": "com.soundtoys.vst3.56535444564C20646576696C6C6F6300",
+  "name": "Devil-Loc",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are 0-1 positions, read through a table measured with tools/build-table.mjs.",
+    "Crush and Crunch are Devil-Loc controls: they carry between Devil-Loc and Devil-Loc Deluxe only.",
+    "Bypass stands in for in/out (labels checked by build-table)."
+  ],
+  "controls": {
+    "comp_in":   { "param": "Bypass", "states": {"on": "Off", "off": "On"} },
+    "dl_crush":  { "param": "Crush" },
+    "dl_crunch": { "param": "Crunch" }
+  }
+}

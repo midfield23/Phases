@@ -1,0 +1,97 @@
+{
+  "pluginId": "TODO: LUNA plugin id (probe-strips.mjs prints it)",
+  "name": "AMEK 9099",
+  "domain": "cs",
+  "mode": "TODO: \"real\" for UA plugins, \"table\" for others",
+  "reaSixty": {
+    "match": "bx_console AMEK 9099",
+    "original": "VST3: bx_console AMEK 9099 (Plugin Alliance)"
+  },
+  "notes": [
+    "Drafted from Rea-Sixty user_plugins.json. Check every line against the plugin in LUNA.",
+    "Add switches (eq_in, comp_in, hf_type …) with \"states\", and \"scale\": 1000 for knobs shown in kHz."
+  ],
+  "controls": {
+    "lpf": {
+      "param": "LowPass Filter"
+    },
+    "hpf": {
+      "param": "HighPass Filter"
+    },
+    "lf_gain": {
+      "param": "Low Gain"
+    },
+    "lf_freq": {
+      "param": "Low Frequency"
+    },
+    "lmf_q": {
+      "param": "Low Mid Q"
+    },
+    "lmf_gain": {
+      "param": "Low Mid Gain"
+    },
+    "lmf_freq": {
+      "param": "Low Mid Frequency"
+    },
+    "hmf_q": {
+      "param": "High Mid Q"
+    },
+    "hmf_gain": {
+      "param": "High Mid Gain"
+    },
+    "hmf_freq": {
+      "param": "High Mid Frequency"
+    },
+    "hf_freq": {
+      "param": "High Frequency"
+    },
+    "hf_gain": {
+      "param": "High Gain"
+    },
+    "comp_thresh": {
+      "param": "Comp Threshold"
+    },
+    "comp_release": {
+      "param": "Comp Release"
+    },
+    "comp_ratio": {
+      "param": "Comp Ratio"
+    },
+    "gate_range": {
+      "param": "Gate Range"
+    },
+    "gate_thresh": {
+      "param": "Gate Threshold"
+    },
+    "gate_release": {
+      "param": "Gate Release"
+    },
+    "gate_hold": {
+      "param": "Gate Hold"
+    },
+    "gate_exp": {
+      "param": "Gate Expander Mode"
+    },
+    "comp_in": {
+      "param": "Comp On/Off"
+    },
+    "in_trim": {
+      "param": "Input Gain"
+    },
+    "out": {
+      "param": "Output Gain"
+    },
+    "eq_in": {
+      "param": "EQ On/Off"
+    }
+  },
+  "unmappedReaSixtyControls": [
+    "linkIdx 8 -> Low Frequency",
+    "linkIdx 24 -> Low Frequency",
+    "linkIdx 25 -> Low Mid Q",
+    "linkIdx 34 -> High Gain",
+    "linkIdx 36 -> High Frequency",
+    "linkIdx 5 -> Input Gain",
+    "linkIdx 21 -> Output Gain"
+  ]
+}

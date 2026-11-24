@@ -1,0 +1,91 @@
+{
+  "pluginId": "TODO: LUNA plugin id (probe-strips.mjs prints it)",
+  "name": "Focusrite SC",
+  "domain": "cs",
+  "mode": "TODO: \"real\" for UA plugins, \"table\" for others",
+  "reaSixty": {
+    "match": "bx_console Focusrite SC",
+    "original": "VST3: bx_console Focusrite SC (Plugin Alliance)"
+  },
+  "notes": [
+    "Drafted from Rea-Sixty user_plugins.json. Check every line against the plugin in LUNA.",
+    "Add switches (eq_in, comp_in, hf_type …) with \"states\", and \"scale\": 1000 for knobs shown in kHz."
+  ],
+  "controls": {
+    "comp_ratio": {
+      "param": "Comp Ratio"
+    },
+    "comp_release": {
+      "param": "Comp Release"
+    },
+    "gate_range": {
+      "param": "Gate Range"
+    },
+    "gate_thresh": {
+      "param": "Gate Threshold"
+    },
+    "gate_release": {
+      "param": "Gate Release"
+    },
+    "gate_hold": {
+      "param": "Gate Hold"
+    },
+    "gate_exp": {
+      "param": "Gate Expander"
+    },
+    "comp_thresh": {
+      "param": "Comp Threshold"
+    },
+    "hmf_gain": {
+      "param": "EQ HMF Gain"
+    },
+    "hf_freq": {
+      "param": "EQ HF Freq"
+    },
+    "hf_gain": {
+      "param": "EQ HF Gain"
+    },
+    "lf_gain": {
+      "param": "EQ LF Gain"
+    },
+    "lf_freq": {
+      "param": "EQ LF Freq"
+    },
+    "lmf_q": {
+      "param": "EQ LMF Q"
+    },
+    "lmf_freq": {
+      "param": "EQ LMF Freq"
+    },
+    "lmf_gain": {
+      "param": "EQ LMF Gain"
+    },
+    "hmf_q": {
+      "param": "EQ HMF Q"
+    },
+    "hmf_freq": {
+      "param": "EQ HMF Freq"
+    },
+    "lpf": {
+      "param": "Dyn LPF Freq"
+    },
+    "hpf": {
+      "param": "Dyn HPF Freq"
+    },
+    "in_trim": {
+      "param": "In Gain"
+    },
+    "out": {
+      "param": "Virtual Gain"
+    },
+    "comp_in": {
+      "param": "Comp On"
+    }
+  },
+  "unmappedReaSixtyControls": [
+    "linkIdx 34 -> Gate Attack",
+    "linkIdx 36 -> Comp Ratio",
+    "linkIdx 24 -> Gate Range",
+    "linkIdx 25 -> Gate Threshold"
+  ]
+}

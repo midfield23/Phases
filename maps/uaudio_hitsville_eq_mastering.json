@@ -1,0 +1,33 @@
+{
+  "pluginId": "uaudio_hitsville_eq_mastering",
+  "name": "Hitsville EQ Mastering",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. The mastering graphic: seven bands, each 0-8 dB with Dip or Peak and a choice of two frequencies. Mapped on the left channel, so keep Ctrl Link on (and L-R, not M-S).",
+    "Another strip's bands each go onto the nearest band and frequency choice; Dip or Peak follows the sign. Read back as for the Hitsville EQ."
+  ],
+  "controls": {
+    "eq_in":     { "param": "Left Byp", "states": {"off": "Out", "on": "In"} },
+    "out":       { "param": "Left Gain" },
+    "lf_gain":   { "graphic": true },
+    "lf_freq":   { "graphic": true },
+    "lmf_gain":  { "graphic": true },
+    "lmf_freq":  { "graphic": true },
+    "hmf_gain":  { "graphic": true },
+    "hmf_freq":  { "graphic": true },
+    "hf_gain":   { "graphic": true },
+    "hf_freq":   { "graphic": true }
+  },
+  "graphic": {
+    "bands": [
+      {"gain": "L1-Gain", "freq": "L1-Freq", "sign": {"param": "L1-Dip/Pk", "neg": "Dip", "pos": "Peak"}},
+      {"gain": "L2-Gain", "freq": "L2-Freq", "sign": {"param": "L2-Dip/Pk", "neg": "Dip", "pos": "Peak"}},
+      {"gain": "L3-Gain", "freq": "L3-Freq", "sign": {"param": "L3-Dip/Pk", "neg": "Dip", "pos": "Peak"}},
+      {"gain": "L4-Gain", "freq": "L4-Freq", "sign": {"param": "L4-Dip/Pk", "neg": "Dip", "pos": "Peak"}},
+      {"gain": "L5-Gain", "freq": "L5-Freq", "sign": {"param": "L5-Dip/Pk", "neg": "Dip", "pos": "Peak"}},
+      {"gain": "L6-Gain", "freq": "L6-Freq", "sign": {"param": "L6-Dip/Pk", "neg": "Dip", "pos": "Peak"}},
+      {"gain": "L7-Gain", "freq": "L7-Freq", "sign": {"param": "L7-Dip/Pk", "neg": "Dip", "pos": "Peak"}}
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "pluginId": "uaudio_manley_massive_passive",
+  "name": "Manley Massive Passive",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Mapped on channel 1, so keep the channels linked. Band gains and the output report raw numbers, so they are measured (table: true).",
+    "Each band's CUT / OUT / BOOST switch gives the sign: a cut goes in as CUT, 0 dB as OUT. Bandwidth and the mid bands' shapes are not mapped (the shared list has types for the low and high bands only)."
+  ],
+  "controls": {
+    "eq_in":     { "param": "Ch1ENABLE", "states": {"off": "OUT", "on": "IN"} },
+    "out":       { "param": "Ch1GAIN", "table": true },
+    "hpf":       { "param": "Ch1HiPass", "offText": "OFF" },
+    "lpf":       { "param": "Ch1LoPass", "offText": "OFF" },
+    "lf_gain":   { "param": "Ch1LoGain", "table": true, "range": {"param": "Ch1LoEnable", "off": "BOOST", "on": "CUT", "by": -1, "zero": "OUT"} },
+    "lf_freq":   { "param": "Ch1LoFreq" },
+    "lf_type":   { "param": "Ch1LoShape", "states": {"bell": "BELL", "shelf": "SHELF"} },
+    "lmf_gain":  { "param": "Ch1LoMidGain", "table": true, "range": {"param": "Ch1LoMidEnable", "off": "BOOST", "on": "CUT", "by": -1, "zero": "OUT"} },
+    "lmf_freq":  { "param": "Ch1LoMidFreq" },
+    "hmf_gain":  { "param": "Ch1HiMidGain", "table": true, "range": {"param": "Ch1HiMidEnable", "off": "BOOST", "on": "CUT", "by": -1, "zero": "OUT"} },
+    "hmf_freq":  { "param": "Ch1HiMidFreq" },
+    "hf_gain":   { "param": "Ch1HiGain", "table": true, "range": {"param": "Ch1HiEnable", "off": "BOOST", "on": "CUT", "by": -1, "zero": "OUT"} },
+    "hf_freq":   { "param": "Ch1HiFreq" },
+    "hf_type":   { "param": "Ch1HiShape", "states": {"bell": "BELL", "shelf": "SHELF"} }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "pluginId": "uaudio_manley_voxbox",
+  "name": "Manley VOXBOX",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. EQ gains and Output report 0-32768 instead of dB, so they are measured (table: true).",
+    "Lo Peak and Hi Peak only boost (0 to 10 dB) and Mid Dip only cuts (0 to -10 dB, confirmed by the table of 2026-11-23): a value the other way is left at default and remembered. Peak types not mapped yet.",
+    "Compressor threshold, input and de-esser are 0-10 knobs, not mapped."
+  ],
+  "controls": {
+    "out":       { "param": "Output", "table":true },
+    "polarity":  { "param": "Phase", "states": {"off": "0", "on": "180"} },
+    "hpf":       { "param": "Low Cut", "offText": "Off" },
+    "eq_in":     { "param": "EQ Byp", "states": {"off": "Byp", "on": "In"} },
+    "hf_gain":   { "param": "Hi Peak", "table":true },
+    "hf_freq":   { "param": "Hi Peak Freq" },
+    "lmf_gain":  { "param": "Mid Dip", "table":true },
+    "lmf_freq":  { "param": "Mid Dip Freq" },
+    "lf_freq":   { "param": "Lo Peak Freq" },
+    "lf_gain":   { "param": "Lo Peak", "table":true },
+    "comp_in":   { "param": "Comp Byp", "states": {"off": "Byp", "on": "In"} }
+  }
+}

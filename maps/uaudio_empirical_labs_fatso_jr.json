@@ -1,0 +1,12 @@
+{
+  "pluginId": "uaudio_empirical_labs_fatso_jr",
+  "name": "FATSO Jr",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. The compressor is a set of modes (BUSS, Tracking, SPANK...) with no threshold, ratio or times, so only in/out carries (Power). Input, output, Comp and Warmth come back as you left them when you return to the FATSO Jr."
+  ],
+  "controls": {
+    "comp_in":     { "param": "Power", "states": {"off": "Off", "on": "On"} }
+  }
+}

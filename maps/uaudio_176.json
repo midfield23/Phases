@@ -1,0 +1,19 @@
+{
+  "pluginId": "uaudio_176",
+  "name": "176",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Input and output are dB on the 175/176 gain structure, attack and release are knob positions 1-7: these carry only to and from the 175-B.",
+    "Power stands in for the compressor's in/out."
+  ],
+  "controls": {
+    "comp_in":     { "param": "Power", "states": {"off": "Off", "on": "On"} },
+    "comp_ratio":  { "param": "Ratio" },
+    "vm_input":    { "param": "Input", "ends": [-40, 0] },
+    "vm_output":   { "param": "Output", "ends": [-40, 0] },
+    "vm_attack":   { "param": "Attack", "ends": [0, 7] },
+    "vm_release":  { "param": "Release", "ends": [1, 7] },
+    "comp_mix":    { "param": "Mix", "ends": [0, 100] }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "pluginId": "com.universal_audio_inc.vst.80AU",
+  "name": "Precision Channel Strip (UAD-2)",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: a VST-wrapped UAD-2 plugin, so every knob reports only its 0-1 position; values go through a table measured with tools/build-table.mjs.",
+    "Five EQ bands into the four shared ones: LF1 = low, MF = low mid, HF1 = high mid, HF2 = high. LF2 is not mapped. The Flt/Q knobs mix a shelf setting and a Q, so band types and HF1 Q are not mapped.",
+    "Output is the dynamics output level (Dyn Lvl), after the EQ.",
+    "Table built 2026-11-23; switch labels confirmed. Ratio tops out at INF."
+  ],
+  "controls": {
+    "out":           { "param": "Dyn Lvl" },
+    "dyn_pre_eq":    { "param": "Dyn PreEQ", "states": {"off": "Off", "on": "On"} },
+    "eq_in":         { "param": "EQ Ena", "states": {"off": "Off", "on": "On"} },
+    "hf_gain":       { "param": "HF2 Gain" },
+    "hf_freq":       { "param": "HF2 Freq" },
+    "hmf_gain":      { "param": "HF1 Gain" },
+    "hmf_freq":      { "param": "HF1 Freq" },
+    "lmf_gain":      { "param": "MF Gain" },
+    "lmf_freq":      { "param": "MF Freq" },
+    "lmf_q":         { "param": "MF Q" },
+    "lf_gain":       { "param": "LF1 Gain" },
+    "lf_freq":       { "param": "LF1 Freq" },
+    "comp_in":       { "param": "Dyn Ena", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":   { "param": "Thresh" },
+    "comp_ratio":    { "param": "Ratio" },
+    "comp_release":  { "param": "Release" }
+  }
+}

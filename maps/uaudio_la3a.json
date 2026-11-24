@@ -1,0 +1,15 @@
+{
+  "pluginId": "uaudio_la3a",
+  "name": "LA-3A",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Peak Reduction and Gain are 0-10 knobs on a different (solid-state) circuit, so they don't join the LA-2A family; they come back as you left them when you return to the LA-3A, as does HF Emphasis.",
+    "Comp/Limit carries to and from the LA-2A family. Mix is read through a measured table. Power stands in for the compressor's in/out."
+  ],
+  "controls": {
+    "comp_in":     { "param": "Power", "states": {"off": "Off", "on": "On"} },
+    "opto_mode":   { "param": "Comp/Limit", "states": {"comp": "Comp", "limit": "Limit"} },
+    "comp_mix":    { "param": "Mix", "table": true }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "pluginId": "com.universal_audio_inc.vst.B7AU",
+  "name": "Harrison 32C (UAD-2)",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: a VST-wrapped UAD-2 plugin, so every knob reports only its 0-1 position; values go through a table measured with tools/build-table.mjs.",
+    "CutEnable switches both filters (like an SSL Filters In). The low-pass has no OUT position: off from another strip parks it fully open (17.2 kHz), and fully open reads as off (openIsOff). LowPeak: Shelf or Peak; the other bands are bells.",
+    "'Gain' is the output gain.",
+    "Table built 2026-11-23; switch labels confirmed. Gain runs -10 to +10 (dB)."
+  ],
+  "controls": {
+    "out":         { "param": "Gain" },
+    "polarity":    { "param": "Phase", "states": {"off": "Normal", "on": "Inverted"} },
+    "filters_in":  { "param": "CutEnable", "states": {"off": "Out", "on": "In"} },
+    "hpf":         { "param": "HiPass" },
+    "lpf":         { "param": "LowPass", "openIsOff": true },
+    "eq_in":       { "param": "EQEnable", "states": {"off": "Out", "on": "In"} },
+    "hf_gain":     { "param": "HiGain" },
+    "hf_freq":     { "param": "HiFreq" },
+    "hmf_gain":    { "param": "HiMidGain" },
+    "hmf_freq":    { "param": "HiMidFreq" },
+    "lmf_gain":    { "param": "LoMidGain" },
+    "lmf_freq":    { "param": "LoMidFreq" },
+    "lf_gain":     { "param": "LowGain" },
+    "lf_freq":     { "param": "LowFreq" },
+    "lf_type":     { "param": "LowPeak", "states": {"shelf": "Shelf", "bell": "Peak"} }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "pluginId": "uaudio_dbx_160",
+  "name": "dbx 160",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Threshold, ratio, gain and mix report raw knob numbers (0-32767), so they're read from the display through a measured table.",
+    "Gain is the make-up (out). Power stands in for the compressor's in/out."
+  ],
+  "controls": {
+    "comp_in":     { "param": "Power", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh": { "param": "Thresh", "table": true },
+    "comp_ratio":  { "param": "Compress", "table": true },
+    "out":         { "param": "Gain", "table": true },
+    "comp_mix":    { "param": "Mix", "table": true }
+  }
+}

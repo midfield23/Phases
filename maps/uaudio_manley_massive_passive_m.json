@@ -1,0 +1,26 @@
+{
+  "pluginId": "uaudio_manley_massive_passive_m",
+  "name": "Manley Massive Passive MST",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. The mastering version: stepped gains (0 to 11 dB), stepped output (+/-2.5 dB) and mastering filter steps. Mapped on channel 1, so keep the channels linked.",
+    "Each band's CUT / OUT / BOOST switch gives the sign, as on the Massive Passive. Bandwidth and the mid bands' shapes are not mapped."
+  ],
+  "controls": {
+    "eq_in":     { "param": "Ch1ENABLE", "states": {"off": "OUT", "on": "IN"} },
+    "out":       { "param": "Ch1GAIN" },
+    "hpf":       { "param": "Ch1HiPass", "offText": "OFF" },
+    "lpf":       { "param": "Ch1LoPass", "offText": "OFF" },
+    "lf_gain":   { "param": "Ch1LoGain", "range": {"param": "Ch1LoEnable", "off": "BOOST", "on": "CUT", "by": -1, "zero": "OUT"} },
+    "lf_freq":   { "param": "Ch1LoFreq" },
+    "lf_type":   { "param": "Ch1LoShape", "states": {"bell": "BELL", "shelf": "SHELF"} },
+    "lmf_gain":  { "param": "Ch1LoMidGain", "range": {"param": "Ch1LoMidEnable", "off": "BOOST", "on": "CUT", "by": -1, "zero": "OUT"} },
+    "lmf_freq":  { "param": "Ch1LoMidFreq" },
+    "hmf_gain":  { "param": "Ch1HiMidGain", "range": {"param": "Ch1HiMidEnable", "off": "BOOST", "on": "CUT", "by": -1, "zero": "OUT"} },
+    "hmf_freq":  { "param": "Ch1HiMidFreq" },
+    "hf_gain":   { "param": "Ch1HiGain", "range": {"param": "Ch1HiEnable", "off": "BOOST", "on": "CUT", "by": -1, "zero": "OUT"} },
+    "hf_freq":   { "param": "Ch1HiFreq" },
+    "hf_type":   { "param": "Ch1HiShape", "states": {"bell": "BELL", "shelf": "SHELF"} }
+  }
+}

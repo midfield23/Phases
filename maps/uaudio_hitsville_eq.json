@@ -1,0 +1,33 @@
+{
+  "pluginId": "uaudio_hitsville_eq",
+  "name": "Hitsville EQ",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. A graphic EQ: seven fixed bands (50 Hz to 12.5 kHz), +/-8 dB in 1 dB steps.",
+    "Another strip's four bands each go onto the nearest graphic band (gains add if two land on one); bands nobody uses go to 0 dB. Read back, the biggest boosts and cuts (up to four) become the shared bands. Q and band types don't carry: they stay remembered."
+  ],
+  "controls": {
+    "eq_in":     { "param": "Bypass", "states": {"off": "Out", "on": "In"} },
+    "out":       { "param": "Gain" },
+    "lf_gain":   { "graphic": true },
+    "lf_freq":   { "graphic": true },
+    "lmf_gain":  { "graphic": true },
+    "lmf_freq":  { "graphic": true },
+    "hmf_gain":  { "graphic": true },
+    "hmf_freq":  { "graphic": true },
+    "hf_gain":   { "graphic": true },
+    "hf_freq":   { "graphic": true }
+  },
+  "graphic": {
+    "bands": [
+      {"gain": "1-50", "freq": 50},
+      {"gain": "2-130", "freq": 130},
+      {"gain": "3-320", "freq": 320},
+      {"gain": "4-800", "freq": 800},
+      {"gain": "5-2000", "freq": 2000},
+      {"gain": "6-5000", "freq": 5000},
+      {"gain": "7-12500", "freq": 12500}
+    ]
+  }
+}

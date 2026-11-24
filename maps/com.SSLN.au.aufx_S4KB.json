@@ -1,0 +1,165 @@
+{
+  "pluginId": "com.SSLN.au.aufx_S4KB",
+  "name": "SSL 4K B",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Made from the SSL 4K E map on 2026-11-23: same parameter names, but no compressor or gate fast-attack switch. Table built 2026-11-23; switch labels confirmed.",
+    "Display text carries no units: `scale: 1000` marks controls shown in kHz.",
+    "One 'Dynamics In' switches compressor and gate together: on if either is on. A section that should be off is neutralised instead (whenOff: ratio 1:1, gate range 0), and reads as off when it is (offIf).",
+    "Ratio, compressor release and gate release are stepped (ratio out / 2:1 / 4:1 / 10:1 / ds; release ds / .2 / .4 / .8 / 1.6 s / auto; gate release .1 to 1.6 s): a value from another strip goes to the nearest step. Ratio 'out' counts as 1:1.",
+    "'ds' and 'auto' have no equivalent on other strips: they carry between SSL strips that have them, and are otherwise left at default and remembered."
+  ],
+  "controls": {
+    "in_trim": {
+      "param": "Input Trim"
+    },
+    "out": {
+      "param": "Output Trim"
+    },
+    "polarity": {
+      "param": "Polarity",
+      "states": {
+        "off": "Out",
+        "on": "In"
+      }
+    },
+    "dyn_pre_eq": {
+      "param": "Dynamics Pre-EQ",
+      "states": {
+        "off": "Out",
+        "on": "In"
+      }
+    },
+    "filters_in": {
+      "param": "Filters In",
+      "states": {
+        "off": "Out",
+        "on": "In"
+      }
+    },
+    "hpf": {
+      "param": "High Pass Filter",
+      "offText": "OUT"
+    },
+    "lpf": {
+      "param": "Low Pass Filter",
+      "offText": "OUT",
+      "scale": 1000
+    },
+    "eq_in": {
+      "param": "EQ In",
+      "states": {
+        "off": "Out",
+        "on": "In"
+      }
+    },
+    "hf_gain": {
+      "param": "HF Gain"
+    },
+    "hf_freq": {
+      "param": "HF Frequency",
+      "scale": 1000
+    },
+    "hf_type": {
+      "param": "HF Type",
+      "states": {
+        "shelf": "Shelf",
+        "bell": "Bell"
+      }
+    },
+    "hmf_gain": {
+      "param": "HMF Gain"
+    },
+    "hmf_freq": {
+      "param": "HMF Frequency",
+      "scale": 1000
+    },
+    "hmf_q": {
+      "param": "HMF Q"
+    },
+    "lmf_gain": {
+      "param": "LMF Gain"
+    },
+    "lmf_freq": {
+      "param": "LMF Frequency",
+      "scale": 1000
+    },
+    "lmf_q": {
+      "param": "LMF Q"
+    },
+    "lf_gain": {
+      "param": "LF Gain"
+    },
+    "lf_freq": {
+      "param": "LF Frequency"
+    },
+    "lf_type": {
+      "param": "LF Type",
+      "states": {
+        "shelf": "Shelf",
+        "bell": "Bell"
+      }
+    },
+    "comp_in": {
+      "param": "Dynamics In",
+      "states": {
+        "off": "Out",
+        "on": "In"
+      },
+      "whenOff": {
+        "comp_ratio": 1
+      },
+      "offIf": {
+        "comp_ratio": 1
+      }
+    },
+    "comp_thresh": {
+      "param": "Compressor Threshold"
+    },
+    "comp_ratio": {
+      "param": "Compressor Ratio",
+      "texts": {
+        "out": 1
+      },
+      "stepped": true
+    },
+    "comp_release": {
+      "param": "Compressor Release",
+      "stepped": true
+    },
+    "comp_mix": {
+      "param": "Compressor Mix"
+    },
+    "gate_in": {
+      "param": "Dynamics In",
+      "states": {
+        "off": "Out",
+        "on": "In"
+      },
+      "whenOff": {
+        "gate_range": 0
+      },
+      "offIf": {
+        "gate_range": 0
+      }
+    },
+    "gate_thresh": {
+      "param": "Gate Threshold"
+    },
+    "gate_range": {
+      "param": "Gate Range"
+    },
+    "gate_release": {
+      "param": "Gate Release",
+      "stepped": true
+    },
+    "gate_exp": {
+      "param": "Gate Expander",
+      "states": {
+        "gate": "Out",
+        "expander": "In"
+      }
+    }
+  }
+}

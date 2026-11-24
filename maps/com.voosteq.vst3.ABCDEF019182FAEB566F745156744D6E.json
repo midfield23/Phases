@@ -1,0 +1,31 @@
+{
+  "pluginId": "com.voosteq.vst3.ABCDEF019182FAEB566F745156744D6E",
+  "name": "Model N Channel",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs. Replaces the Rea-Sixty draft (which had the filters swapped).",
+    "Neve-style: high and low are fixed shelves, the mid is a bell; frequencies and filters are stepped (nearest step). Routing 'Pre EQ' = compressor before the EQ, 'Post EQ' after (labels confirmed by the table of 2026-11-23). Ratio and recovery are stepped; recovery AUTO carries to other strips' auto release.",
+    "Preamp, Nuance/Slam, makeup and the analog options are not mapped."
+  ],
+  "controls": {
+    "in_trim":       { "param": "Trim" },
+    "out":           { "param": "MasterGain" },
+    "dyn_pre_eq":    { "param": "Routing", "states": {"off": "Post EQ", "on": "Pre EQ"} },
+    "hpf":           { "param": "High Pass", "offText": "OFF", "stepped": true },
+    "lpf":           { "param": "Low Pass", "offText": "OFF", "stepped": true },
+    "eq_in":         { "param": "EQ Enable", "states": {"off": "Off", "on": "On"} },
+    "hf_gain":       { "param": "Hi Gain" },
+    "hf_freq":       { "param": "Hi Freq", "stepped": true },
+    "hf_type":       { "fixed": "shelf" },
+    "hmf_gain":      { "param": "Mid Gain" },
+    "hmf_freq":      { "param": "Mid Freq", "stepped": true },
+    "lf_gain":       { "param": "Low Gain" },
+    "lf_freq":       { "param": "Low Freq", "stepped": true },
+    "lf_type":       { "fixed": "shelf" },
+    "comp_in":       { "param": "Comp Enable", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":   { "param": "Threshold" },
+    "comp_ratio":    { "param": "Ratio", "stepped": true },
+    "comp_release":  { "param": "Recovery", "texts": {"AUTO": "auto"}, "stepped": true }
+  }
+}

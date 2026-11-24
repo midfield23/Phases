@@ -1,0 +1,16 @@
+{
+  "pluginId": "com.purafied_audio.vst3.565354506C636F6C656420636F6D7072",
+  "name": "LED Compressor",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are 0-1 positions, read through a table measured with tools/build-table.mjs.",
+    "Ratio and output carry, and in/out (Bypass). Mix shows 0-1, so scale 100 makes it a percentage. Input drive, saturation, THD and the tone controls come back as you left them."
+  ],
+  "controls": {
+    "comp_in":     { "param": "Bypass", "states": {"off": "On", "on": "Off"} },
+    "comp_ratio":  { "param": "Ratio" },
+    "out":         { "param": "Output" },
+    "comp_mix":    { "param": "MIX", "scale": 100 }
+  }
+}

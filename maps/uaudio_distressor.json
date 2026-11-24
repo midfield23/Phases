@@ -1,0 +1,15 @@
+{
+  "pluginId": "uaudio_distressor",
+  "name": "Distressor",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Input, attack, release and output are 0-10 knob positions and Detector / Audio are Distressor modes: none of them mean anything on other compressors, so they aren't carried. They come back as you left them when you return to the Distressor.",
+    "NUKE reads as a limiter (inf:1); a limiter setting from elsewhere goes to NUKE. Mix is read through a measured table."
+  ],
+  "controls": {
+    "comp_in":     { "param": "Bypass", "states": {"off": "Byp", "on": "Off"} },
+    "comp_ratio":  { "param": "Ratio", "texts": {"NUKE": "inf"} },
+    "comp_mix":    { "param": "Mix", "table": true }
+  }
+}

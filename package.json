@@ -1,0 +1,11 @@
+{
+  "name": "luna-strip-favorites",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cycle channel strips in LUNA and carry the settings across, after Rea-Sixty's Favourites",
+  "scripts": {
+    "test": "node --test test/convert.test.mjs test/engine.test.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,33 @@
+{
+  "pluginId": "uaudio_avalon_vt-737sp",
+  "name": "Avalon VT-737",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Preamp Gain reports 0-1 instead of dB, so it is measured (table: true); the rest report real units.",
+    "Lo Mid and Hi Mid X10 multiply those bands' frequency by 10: read where the band really is, and used only when a value needs it (after measure-ends has recorded the knobs' ends).",
+    "Compressor attack and release are 0-10 positions, not mapped. 'EQ to Comp: EQ Pre' puts the EQ first, so dynamics before EQ is its Off."
+  ],
+  "controls": {
+    "in_trim":      { "param": "Preamp Gain", "table":true },
+    "out":          { "param": "Output", "ends": [-40, 10] },
+    "polarity":     { "param": "Phase", "states": {"off": "0", "on": "Rev"} },
+    "dyn_pre_eq":   { "param": "EQ to Comp", "states": {"off": "EQ Pre", "on": "Off"} },
+    "filters_in":   { "param": "Filter", "states": {"off": "Out", "on": "In"} },
+    "hpf":          { "param": "HP Freq", "ends": [30, 140] },
+    "eq_in":        { "param": "EQ In", "states": {"off": "Out", "on": "In"} },
+    "hf_gain":      { "param": "Treble Gain", "ends": [-20, 20] },
+    "hf_freq":      { "param": "Treble Freq" },
+    "hf_type":      { "fixed": "shelf" },
+    "hmf_gain":     { "param": "Hi Mid Gain", "ends": [-16, 16] },
+    "hmf_freq":     { "param": "Hi Mid Freq", "range": {"param": "Hi Mid X10", "off": "Out", "on": "X10", "by": 10}, "ends": [220, 2800] },
+    "lmf_gain":     { "param": "Lo Mid Gain", "ends": [-16, 16] },
+    "lmf_freq":     { "param": "Lo Mid Freq", "range": {"param": "Lo Mid X10", "off": "Out", "on": "X10", "by": 10}, "ends": [35, 450] },
+    "lf_freq":      { "param": "Bass Freq" },
+    "lf_gain":      { "param": "Bass Gain", "ends": [-24, 24] },
+    "lf_type":      { "fixed": "shelf" },
+    "comp_in":      { "param": "Comp In", "states": {"off": "Out", "on": "In"} },
+    "comp_thresh":  { "param": "Comp Threshold", "ends": [-30, 20] },
+    "comp_ratio":   { "param": "Comp Ratio", "ends": [1, 20] }
+  }
+}

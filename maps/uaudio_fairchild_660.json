@@ -1,0 +1,34 @@
+{
+  "pluginId": "uaudio_fairchild_660",
+  "name": "Fairchild 660",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Threshold (0-10) and Time Constant (1-6) are Fairchild controls: they carry between the 660 and 670 only. The input steps come back as you left them when you return to the 660.",
+    "Threshold, Output and Mix report raw knob numbers and are read through a measured table. Power stands in for the compressor's in/out."
+  ],
+  "controls": {
+    "comp_in": {
+      "param": "Power",
+      "states": {
+        "off": "Off",
+        "on": "On"
+      }
+    },
+    "fc_thresh": {
+      "param": "Thresh",
+      "table": true
+    },
+    "fc_time": {
+      "param": "Time Const"
+    },
+    "out": {
+      "param": "Output",
+      "table": true
+    },
+    "comp_mix": {
+      "param": "Mix",
+      "table": true
+    }
+  }
+}

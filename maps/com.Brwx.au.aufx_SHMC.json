@@ -1,0 +1,22 @@
+{
+  "pluginId": "com.Brwx.au.aufx_SHMC",
+  "name": "Shadow Hills Mastering Compressor",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are positions, read through a table measured with tools/build-table.mjs.",
+    "The discrete stage's ratio, attack and recovery (stepped) carry to any compressor; the optical and discrete threshold and gain knobs are Shadow Hills positions and carry between the Class A and Mastering versions only. Channel 1 is written; in Stereo mode it should drive both.",
+    "Flood (the top ratio) is Shadow Hills-only and isn't carried; Dual recovery carries as auto release. Hardwire Bypass stands in for in/out. Transformer, side-chain and meter settings come back as you left them."
+  ],
+  "controls": {
+    "comp_in":        { "param": "Hardwire Bypass", "states": {"off": "Out", "on": "In"} },
+    "comp_ratio":     { "param": "Discrete Ratio 1", "stepped": true, "texts": {"Flood": "skip"} },
+    "comp_attack":    { "param": "Discrete Attack 1", "stepped": true },
+    "comp_release":   { "param": "Discrete Recover 1", "stepped": true, "texts": {"Dual": "auto"} },
+    "sh_opt_thresh":  { "param": "Optical Threshold 1", "stepped": true },
+    "sh_opt_gain":    { "param": "Optical Gain 1", "stepped": true },
+    "sh_disc_thresh": { "param": "Discrete Threshold 1", "stepped": true },
+    "sh_disc_gain":   { "param": "Discrete Gain 1", "stepped": true },
+    "comp_mix":       { "param": "Mix" }
+  }
+}

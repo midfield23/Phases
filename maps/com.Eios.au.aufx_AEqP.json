@@ -1,0 +1,156 @@
+{
+  "pluginId": "com.Eios.au.aufx_AEqP",
+  "name": "AirEQ Premium",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs.",
+    "Bands go anywhere with any shape: reading takes the bands in use (cuts become the filters; the biggest boosts and cuts, up to four, become the shared bands); writing puts each of another strip's bands on a free band and switches the rest off. One band's knobs are measured for all of them.",
+    "Five bands: 1 can be a bell or shelf (a low shelf), 5 a bell or shelf (a high shelf), 2-4 are bells (labels confirmed by the table of 2026-11-23). The low and high cuts are mapped as ordinary filters. Earth, Air, Character and Strength are not carried."
+  ],
+  "controls": {
+    "in_trim": {
+      "param": "InputGain"
+    },
+    "out": {
+      "param": "OutputGain"
+    },
+    "polarity": {
+      "param": "PhaseReverse",
+      "states": {
+        "off": "Off",
+        "on": "On"
+      }
+    },
+    "eq_in": {
+      "param": "Bypass",
+      "states": {
+        "off": "On",
+        "on": "Off"
+      }
+    },
+    "hpf": {
+      "param": "LowCutFrequency",
+      "enable": {
+        "param": "LowCutOn",
+        "off": "Off",
+        "on": "On"
+      }
+    },
+    "lpf": {
+      "param": "HighCutFrequency",
+      "enable": {
+        "param": "HighCutOn",
+        "off": "Off",
+        "on": "On"
+      }
+    },
+    "lf_gain": {
+      "flex": true
+    },
+    "lf_freq": {
+      "flex": true
+    },
+    "lf_type": {
+      "flex": true
+    },
+    "lmf_gain": {
+      "flex": true
+    },
+    "lmf_freq": {
+      "flex": true
+    },
+    "lmf_q": {
+      "flex": true
+    },
+    "hmf_gain": {
+      "flex": true
+    },
+    "hmf_freq": {
+      "flex": true
+    },
+    "hmf_q": {
+      "flex": true
+    },
+    "hf_gain": {
+      "flex": true
+    },
+    "hf_freq": {
+      "flex": true
+    },
+    "hf_type": {
+      "flex": true
+    }
+  },
+  "flex": {
+    "cuts": false,
+    "tables": {
+      "freq": "Band1Frequency",
+      "gain": "Band1Gain",
+      "q": "Band1Q"
+    },
+    "shapes": {
+      "bell": "Bell",
+      "lowShelf": "Shelf",
+      "highShelf": "Shelf"
+    },
+    "measure": [
+      {
+        "param": "Band1Type",
+        "states": {
+          "bell": "Bell",
+          "lowShelf": "Shelf"
+        }
+      },
+      {
+        "param": "Band5Type",
+        "states": {
+          "bell": "Bell",
+          "highShelf": "Shelf"
+        }
+      }
+    ],
+    "bands": [
+      {
+        "on": "Band1On",
+        "freq": "Band1Frequency",
+        "gain": "Band1Gain",
+        "q": "Band1Q",
+        "shape": "Band1Type",
+        "labels": {
+          "bell": "Bell",
+          "lowShelf": "Shelf"
+        }
+      },
+      {
+        "on": "Band2On",
+        "freq": "Band2Frequency",
+        "gain": "Band2Gain",
+        "q": "Band2Q"
+      },
+      {
+        "on": "Band3On",
+        "freq": "Band3Frequency",
+        "gain": "Band3Gain",
+        "q": "Band3Q"
+      },
+      {
+        "on": "Band4On",
+        "freq": "Band4Frequency",
+        "gain": "Band4Gain",
+        "q": "Band4Q"
+      },
+      {
+        "on": "Band5On",
+        "freq": "Band5Frequency",
+        "gain": "Band5Gain",
+        "q": "Band5Q",
+        "shape": "Band5Type",
+        "labels": {
+          "bell": "Bell",
+          "highShelf": "Shelf"
+        }
+      }
+    ]
+  }
+}

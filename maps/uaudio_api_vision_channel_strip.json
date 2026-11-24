@@ -1,0 +1,50 @@
+{
+  "pluginId": "uaudio_api_vision_channel_strip",
+  "name": "API Vision",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-22: every continuous control reports Hz / dB / s / ratio in `real`, and writes to `real` land exactly.",
+    "550 bands are stepped; values snap to the nearest step. The 550 has no Q control.",
+    "EQ values are only read and written while EQ Type is 550L (the 560 is a 10-band graphic, not mapped).",
+    "One '215 On' switches both filters; one '225 Attack' has three states (Slow is not carried).",
+    "dyn_pre_eq is the inverse of 'EQ Predyn' (EQ before dynamics). Verify by ear."
+  ],
+  "when": {
+    "eq": {
+      "param": "EQ Type",
+      "is": "550L"
+    }
+  },
+  "controls": {
+    "in_trim":       { "param": "Line Gain", "ends": [0, 12] },
+    "out":           { "param": "Level", "ends": [-78, 9.04] },
+    "polarity":      { "param": "Phase", "states": {"off": "Normal", "on": "Inverted"} },
+    "dyn_pre_eq":    { "param": "EQ Predyn", "states": {"on": "Off", "off": "On"} },
+    "filters_in":    { "param": "215 On", "states": {"off": "Off", "on": "On"} },
+    "hpf":           { "param": "215 HP Filter", "ends": [11.96, 596.4] },
+    "lpf":           { "param": "215 LP Filter", "ends": [642.6, 40849] },
+    "eq_in":         { "param": "EQ On", "states": {"off": "Off", "on": "On"} },
+    "hf_gain":       { "param": "550 HF Gain" },
+    "hf_freq":       { "param": "550 HF Freq" },
+    "hf_type":       { "param": "550 HF Filter", "states": {"shelf": "Shelf", "bell": "Peak"} },
+    "hmf_gain":      { "param": "550 HMF Gain" },
+    "hmf_freq":      { "param": "550 HMF Freq" },
+    "lmf_gain":      { "param": "550 LMF Gain" },
+    "lmf_freq":      { "param": "550 LMF Freq" },
+    "lf_gain":       { "param": "550 LF Gain" },
+    "lf_freq":       { "param": "550 LF Freq" },
+    "lf_type":       { "param": "550 LF Filter", "states": {"shelf": "Shelf", "bell": "Peak"} },
+    "comp_in":       { "param": "225 On", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":   { "param": "225 Thresh", "ends": [13, -18] },
+    "comp_ratio":    { "param": "225 Ratio", "infinityAt": 50, "ends": [1, 50] },
+    "comp_release":  { "param": "225 Release", "ends": [0.05, 3] },
+    "comp_fast":     { "param": "225 Attack", "states": {"off": "Medium", "on": "Fast"} },
+    "gate_in":       { "param": "235 On", "states": {"off": "Off", "on": "On"} },
+    "gate_thresh":   { "param": "235 Thresh", "ends": [35, -47] },
+    "gate_range":    { "param": "235 Depth", "ends": [0, 80] },
+    "gate_release":  { "param": "235 Release", "ends": [0.05, 3] },
+    "gate_exp":      { "param": "235 G/E", "states": {"gate": "Gate", "expander": "Expand"} },
+    "gate_fast":     { "param": "235 Attack", "states": {"off": "Normal", "on": "Fast"} }
+  }
+}

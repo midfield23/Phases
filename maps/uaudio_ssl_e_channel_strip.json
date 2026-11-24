@@ -1,0 +1,43 @@
+{
+  "pluginId": "uaudio_ssl_e_channel_strip",
+  "name": "SSL E Channel Strip",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23 (UADx). Continuous knobs report raw numbers (0-32767), so everything is read from the display through a table measured with tools/build-table.mjs.",
+    "Line Gain is the input trim (Input Select left alone). COMP In and EXP In switch the compressor and gate; the master DYN In is left alone. EXP Select's Gate 2 reads as nothing (Expand and Gate 1 carry).",
+    "Hold, Level, EQ Type (Black/Brown), Transformer and the side-chain switches come back as you left them when you return to this strip."
+  ],
+  "controls": {
+    "in_trim":      { "param": "Line Gain" },
+    "out":          { "param": "Output" },
+    "polarity":     { "param": "Phase", "states": {"off": "Normal", "on": "Inverted"} },
+    "dyn_pre_eq":   { "param": "EQ Pre Dyn", "states": {"on": "Off", "off": "On"} },
+    "hpf":          { "param": "HP Freq", "offText": "Out" },
+    "lpf":          { "param": "LP Freq", "offText": "Out" },
+    "eq_in":        { "param": "EQ In", "states": {"off": "Out", "on": "In"} },
+    "hf_gain":      { "param": "HF Gain" },
+    "hf_freq":      { "param": "HF Freq" },
+    "hf_type":      { "param": "HF Bell", "states": {"shelf": "Shelf", "bell": "Bell"} },
+    "hmf_gain":     { "param": "HMF Gain" },
+    "hmf_freq":     { "param": "HMF Freq" },
+    "hmf_q":        { "param": "HMF Q" },
+    "lmf_gain":     { "param": "LMF Gain" },
+    "lmf_freq":     { "param": "LMF Freq" },
+    "lmf_q":        { "param": "LMF Q" },
+    "lf_gain":      { "param": "LF Gain" },
+    "lf_freq":      { "param": "LF Freq" },
+    "lf_type":      { "param": "LF Bell", "states": {"shelf": "Shelf", "bell": "Bell"} },
+    "comp_in":      { "param": "COMP In", "states": {"off": "Out", "on": "In"} },
+    "comp_ratio":   { "param": "COMP Ratio" },
+    "comp_thresh":  { "param": "COMP Thresh" },
+    "comp_release": { "param": "COMP Release" },
+    "comp_fast":    { "param": "COMP Attack", "states": {"off": "Auto", "on": "Fast"} },
+    "gate_in":      { "param": "EXP In", "states": {"off": "Out", "on": "In"} },
+    "gate_exp":     { "param": "EXP Select", "states": {"expander": "Expand", "gate": "Gate 1"} },
+    "gate_thresh":  { "param": "EXP Thresh" },
+    "gate_range":   { "param": "EXP Range" },
+    "gate_release": { "param": "EXP Release" },
+    "gate_fast":    { "param": "EXP Attack", "states": {"off": "Auto", "on": "Fast"} }
+  }
+}

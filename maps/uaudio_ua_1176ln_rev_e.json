@@ -1,0 +1,19 @@
+{
+  "pluginId": "uaudio_ua_1176ln_rev_e",
+  "name": "1176LN Rev E",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Input, output, attack and release report raw knob numbers (0-32767), so they're read from the display through a measured table. They're 1176-family controls: input/output in the 1176's dB, attack/release as knob positions 1-7. They carry between the 1176 FET, 1176AE and 1176LN Rev E only.",
+    "Power stands in for the compressor's in/out. Two ratio buttons in read as the higher ratio; None (no button) reads as 1:1."
+  ],
+  "controls": {
+    "comp_in":     { "param": "Power", "states": {"off": "Off", "on": "On"} },
+    "comp_ratio":  { "param": "Ratio", "texts": {"None": 1, "4:1+8:1": 8, "8:1+12:1": 12, "12:1+20:1": 20, "4:1+12:1": 12, "8:1+20:1": 20, "4:1+20:1": 20} },
+    "fet_input":   { "param": "Input", "table": true },
+    "fet_output":  { "param": "Output", "table": true },
+    "fet_attack":  { "param": "Attack", "table": true, "offText": "OFF" },
+    "fet_release": { "param": "Release", "table": true },
+    "comp_mix":    { "param": "Mix", "table": true }
+  }
+}

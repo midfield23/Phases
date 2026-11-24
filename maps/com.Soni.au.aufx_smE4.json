@@ -1,0 +1,69 @@
+{
+  "pluginId": "com.Soni.au.aufx_smE4",
+  "name": "smart:EQ4",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs.",
+    "Bands go anywhere with any shape: reading takes the bands in use (cuts become the filters; the biggest boosts and cuts, up to four, become the shared bands); writing puts each of another strip's bands on a free band and switches the rest off. One band's knobs are measured for all of them.",
+    "Only the user bands carry; the smart filter (the learned curve) does not. Type labels confirmed by the table of 2026-11-23 ('flat top' and 'tilt' are not carried)."
+  ],
+  "controls": {
+    "out":       { "param": "Output Gain" },
+    "hpf":       { "flex": true },
+    "lpf":       { "flex": true },
+    "lf_gain":   { "flex": true },
+    "lf_freq":   { "flex": true },
+    "lf_type":   { "flex": true },
+    "lmf_gain":  { "flex": true },
+    "lmf_freq":  { "flex": true },
+    "lmf_q":     { "flex": true },
+    "hmf_gain":  { "flex": true },
+    "hmf_freq":  { "flex": true },
+    "hmf_q":     { "flex": true },
+    "hf_gain":   { "flex": true },
+    "hf_freq":   { "flex": true },
+    "hf_type":   { "flex": true }
+  },
+  "flex": {
+      "tables": {
+          "freq": "Band 1 - Frequency",
+          "gain": "Band 1 - Gain",
+          "q": "Band 1 - Quality",
+          "shape": "Band 1 - Type"
+      },
+      "shapes": {
+          "bell": "bell",
+          "lowShelf": "lowshelf",
+          "highShelf": "highshelf",
+          "lowCut": "lowcut",
+          "highCut": "highcut"
+      },
+    "bands": [
+      {"on": "Band 1 - On/Off", "freq": "Band 1 - Frequency", "gain": "Band 1 - Gain", "q": "Band 1 - Quality", "shape": "Band 1 - Type"},
+      {"on": "Band 2 - On/Off", "freq": "Band 2 - Frequency", "gain": "Band 2 - Gain", "q": "Band 2 - Quality", "shape": "Band 2 - Type"},
+      {"on": "Band 3 - On/Off", "freq": "Band 3 - Frequency", "gain": "Band 3 - Gain", "q": "Band 3 - Quality", "shape": "Band 3 - Type"},
+      {"on": "Band 4 - On/Off", "freq": "Band 4 - Frequency", "gain": "Band 4 - Gain", "q": "Band 4 - Quality", "shape": "Band 4 - Type"},
+      {"on": "Band 5 - On/Off", "freq": "Band 5 - Frequency", "gain": "Band 5 - Gain", "q": "Band 5 - Quality", "shape": "Band 5 - Type"},
+      {"on": "Band 6 - On/Off", "freq": "Band 6 - Frequency", "gain": "Band 6 - Gain", "q": "Band 6 - Quality", "shape": "Band 6 - Type"},
+      {"on": "Band 7 - On/Off", "freq": "Band 7 - Frequency", "gain": "Band 7 - Gain", "q": "Band 7 - Quality", "shape": "Band 7 - Type"},
+      {"on": "Band 8 - On/Off", "freq": "Band 8 - Frequency", "gain": "Band 8 - Gain", "q": "Band 8 - Quality", "shape": "Band 8 - Type"},
+      {"on": "Band 9 - On/Off", "freq": "Band 9 - Frequency", "gain": "Band 9 - Gain", "q": "Band 9 - Quality", "shape": "Band 9 - Type"},
+      {"on": "Band 10 - On/Off", "freq": "Band 10 - Frequency", "gain": "Band 10 - Gain", "q": "Band 10 - Quality", "shape": "Band 10 - Type"},
+      {"on": "Band 11 - On/Off", "freq": "Band 11 - Frequency", "gain": "Band 11 - Gain", "q": "Band 11 - Quality", "shape": "Band 11 - Type"},
+      {"on": "Band 12 - On/Off", "freq": "Band 12 - Frequency", "gain": "Band 12 - Gain", "q": "Band 12 - Quality", "shape": "Band 12 - Type"},
+      {"on": "Band 13 - On/Off", "freq": "Band 13 - Frequency", "gain": "Band 13 - Gain", "q": "Band 13 - Quality", "shape": "Band 13 - Type"},
+      {"on": "Band 14 - On/Off", "freq": "Band 14 - Frequency", "gain": "Band 14 - Gain", "q": "Band 14 - Quality", "shape": "Band 14 - Type"},
+      {"on": "Band 15 - On/Off", "freq": "Band 15 - Frequency", "gain": "Band 15 - Gain", "q": "Band 15 - Quality", "shape": "Band 15 - Type"},
+      {"on": "Band 16 - On/Off", "freq": "Band 16 - Frequency", "gain": "Band 16 - Gain", "q": "Band 16 - Quality", "shape": "Band 16 - Type"},
+      {"on": "Band 17 - On/Off", "freq": "Band 17 - Frequency", "gain": "Band 17 - Gain", "q": "Band 17 - Quality", "shape": "Band 17 - Type"},
+      {"on": "Band 18 - On/Off", "freq": "Band 18 - Frequency", "gain": "Band 18 - Gain", "q": "Band 18 - Quality", "shape": "Band 18 - Type"},
+      {"on": "Band 19 - On/Off", "freq": "Band 19 - Frequency", "gain": "Band 19 - Gain", "q": "Band 19 - Quality", "shape": "Band 19 - Type"},
+      {"on": "Band 20 - On/Off", "freq": "Band 20 - Frequency", "gain": "Band 20 - Gain", "q": "Band 20 - Quality", "shape": "Band 20 - Type"},
+      {"on": "Band 21 - On/Off", "freq": "Band 21 - Frequency", "gain": "Band 21 - Gain", "q": "Band 21 - Quality", "shape": "Band 21 - Type"},
+      {"on": "Band 22 - On/Off", "freq": "Band 22 - Frequency", "gain": "Band 22 - Gain", "q": "Band 22 - Quality", "shape": "Band 22 - Type"},
+      {"on": "Band 23 - On/Off", "freq": "Band 23 - Frequency", "gain": "Band 23 - Gain", "q": "Band 23 - Quality", "shape": "Band 23 - Type"},
+      {"on": "Band 24 - On/Off", "freq": "Band 24 - Frequency", "gain": "Band 24 - Gain", "q": "Band 24 - Quality", "shape": "Band 24 - Type"}
+    ]
+  }
+}

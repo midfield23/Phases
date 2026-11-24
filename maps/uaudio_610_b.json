@@ -1,0 +1,21 @@
+{
+  "pluginId": "uaudio_610_b",
+  "name": "UA 610-B",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Stepped knobs report a step number as `real`, so steps are read from their labels. Output reports 0-32768, so it is measured (table: true).",
+    "The EQ bands are shelves (fixed). Level is a 0-10 knob, not mapped."
+  ],
+  "controls": {
+    "in_trim":   { "param": "Input Gain" },
+    "out":       { "param": "Output", "table":true },
+    "polarity":  { "param": "Polarity", "states": {"off": "In 0", "on": "Out 180"} },
+    "hf_gain":   { "param": "Hi EQ Gain" },
+    "hf_freq":   { "param": "Hi EQ Freq" },
+    "hf_type":   { "fixed": "shelf" },
+    "lf_freq":   { "param": "Lo EQ Freq" },
+    "lf_gain":   { "param": "Lo EQ Gain" },
+    "lf_type":   { "fixed": "shelf" }
+  }
+}

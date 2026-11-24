@@ -1,0 +1,42 @@
+{
+  "pluginId": "com.Brwx.au.aumf_bamk",
+  "name": "bx_console AMEK 9099",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs. Replaces the draft from Rea-Sixty.",
+    "Bands and filters have their own In switches: a band that is out reads as 0 dB. Low Mid /2 and High Mid x2 move those bands (read where they really are, used only when a value needs them); HPF x3 and LPF /3 are not mapped. Peak Off = shelf on the low and high bands.",
+    "Gate range displays negative (-30 dB); scale -1 makes it positive like the other strips. Labels confirmed by the table of 2026-11-23 (EQ Position also has 'In SC', which is not carried). The limiter, ambience, Glow/Sheen and the gate's filters and threshold range are not mapped."
+  ],
+  "controls": {
+    "in_trim":       { "param": "Input Gain" },
+    "out":           { "param": "Output Gain" },
+    "polarity":      { "param": "Phase", "states": {"off": "Off", "on": "On"} },
+    "dyn_pre_eq":    { "param": "EQ Position", "states": {"off": "Pre Dyn", "on": "Post Dyn"} },
+    "hpf":           { "param": "HighPass Filter", "enable": {"param": "HighPass Filter In", "off": "Out", "on": "In"} },
+    "lpf":           { "param": "LowPass Filter", "enable": {"param": "LowPass Filter In", "off": "Out", "on": "In"} },
+    "eq_in":         { "param": "EQ On/Off", "states": {"off": "Off", "on": "On"} },
+    "hf_gain":       { "param": "High Gain", "enable": {"param": "High Band In", "off": "Out", "on": "In", "offValue": 0} },
+    "hf_freq":       { "param": "High Frequency" },
+    "hf_type":       { "param": "High Peak", "states": {"shelf": "Off", "bell": "On"} },
+    "hmf_gain":      { "param": "High Mid Gain", "enable": {"param": "High Mid In", "off": "Out", "on": "In", "offValue": 0} },
+    "hmf_freq":      { "param": "High Mid Frequency", "range": {"param": "High Mid Frequency X2", "off": "Off", "on": "On", "by": 2} },
+    "hmf_q":         { "param": "High Mid Q" },
+    "lmf_gain":      { "param": "Low Mid Gain", "enable": {"param": "Low Mid In", "off": "Out", "on": "In", "offValue": 0} },
+    "lmf_freq":      { "param": "Low Mid Frequency", "range": {"param": "Low Mid Frequency /2", "off": "Off", "on": "On", "by": 0.5} },
+    "lmf_q":         { "param": "Low Mid Q" },
+    "lf_gain":       { "param": "Low Gain", "enable": {"param": "Low Band In", "off": "Out", "on": "In", "offValue": 0} },
+    "lf_freq":       { "param": "Low Frequency" },
+    "lf_type":       { "param": "Low Peak", "states": {"shelf": "Off", "bell": "On"} },
+    "comp_in":       { "param": "Comp On/Off", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":   { "param": "Comp Threshold" },
+    "comp_ratio":    { "param": "Comp Ratio" },
+    "comp_release":  { "param": "Comp Release" },
+    "comp_mix":      { "param": "Comp Mix" },
+    "gate_in":       { "param": "Gate On", "states": {"off": "Off", "on": "On"} },
+    "gate_thresh":   { "param": "Gate Threshold" },
+    "gate_range":    { "param": "Gate Range", "scale": -1 },
+    "gate_release":  { "param": "Gate Release" },
+    "gate_exp":      { "param": "Gate Expander Mode", "states": {"gate": "Gate", "expander": "Expander"} }
+  }
+}

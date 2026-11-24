@@ -1,0 +1,19 @@
+{
+  "pluginId": "uaudio_api_2500",
+  "name": "API 2500",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Attack, ratio and release are stepped and read from their labels. Release \"Vari\" (the Release Vari knob) isn't carried: going to the 2500 picks the nearest fixed release.",
+    "Knee, Thrust, Type and the link controls have no match on other compressors and stay as they are. Gain is the make-up (out), with Gain Enable left alone."
+  ],
+  "controls": {
+    "comp_in":       { "param": "Comp In", "states": {"off": "Out", "on": "In"} },
+    "comp_thresh":   { "param": "Threshold", "ends": [10, -20] },
+    "comp_attack":   { "param": "Attack" },
+    "comp_ratio":    { "param": "Ratio", "texts": {"oo: 1": "inf"} },
+    "comp_release":  { "param": "Release", "texts": {"Vari": "skip"} },
+    "out":           { "param": "Gain", "ends": [0, 24] },
+    "comp_mix":      { "param": "Mix", "ends": [0, 100] }
+  }
+}

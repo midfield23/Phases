@@ -1,0 +1,19 @@
+{
+  "pluginId": "com.Brwx.au.aumf_bxth",
+  "name": "bx_townhouse Buss Compressor",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: values are positions, read through a table measured with tools/build-table.mjs. Attack, ratio and release are stepped; auto release carries as auto.",
+    "Bank, fade and side-chain settings come back as you left them. Input isn't mapped: it read 0.0 dB at every position when measured."
+  ],
+  "controls": {
+    "out":          { "param": "MakeUp" },
+    "comp_in":      { "param": "Comp In", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":  { "param": "Thresh" },
+    "comp_ratio":   { "param": "Ratio", "stepped": true },
+    "comp_attack":  { "param": "Attack", "stepped": true },
+    "comp_release": { "param": "Release", "stepped": true, "texts": {"auto": "auto"} },
+    "comp_mix":     { "param": "Mix" }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "pluginId": "com.FabF.au.aumf_FC3p",
+  "name": "Pro-C 3",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: several values report positions rather than units, so all are read through a table measured with tools/build-table.mjs.",
+    "Threshold, ratio, attack, release, mix and the input and output levels carry. Style, knee, range, lookahead, hold, character, auto gain/release/threshold and the side-chain EQ come back as you left them.",
+    "No in/out: Pro-C 3's switches show no labels to read."
+  ],
+  "controls": {
+    "in_trim":      { "param": "Input Level" },
+    "out":          { "param": "Output Level" },
+    "comp_thresh":  { "param": "Threshold" },
+    "comp_ratio":   { "param": "Ratio" },
+    "comp_attack":  { "param": "Attack" },
+    "comp_release": { "param": "Release" },
+    "comp_mix":     { "param": "Mix" }
+  }
+}

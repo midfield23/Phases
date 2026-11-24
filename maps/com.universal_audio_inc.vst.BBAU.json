@@ -1,0 +1,42 @@
+{
+  "pluginId": "com.universal_audio_inc.vst.BBAU",
+  "name": "Neve 88RS (UAD-2)",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+      "Probed 2026-11-23: a VST-wrapped UAD-2 plugin, so every knob reports only its 0-1 position; values go through a table measured with tools/build-table.mjs.",
+      "HP and LP filters have their own on switches (enable): a filter that is off reads as 'off', and setting one turns its switch on.",
+      "PRE-DYN On puts the EQ before the dynamics, so dynamics-before-EQ is its Off. HF/LF Shelf On = shelf, Off = bell.",
+      "Not mapped: the gate's -40 dB and hysteresis, the limiter's -20 dB and HARD, Hi-Q switches, Level, SC-EQ.",
+      "Table built 2026-11-23; switch labels confirmed (PRE-DYN direction still to check by ear/eye). The Q knobs show no usable values (0.00), so Q is not mapped. Ratio 'Limit' = inf; release 'Auto' carries to the SSL 4K B's auto."
+  ],
+  "controls": {
+    "in_trim":       { "param": "Line Gain" },
+    "out":           { "param": "Output" },
+    "polarity":      { "param": "Phase", "states": {"off": "Normal", "on": "Inverted"} },
+    "dyn_pre_eq":    { "param": "PRE-DYN", "states": {"off": "On", "on": "Off"} },
+    "hpf":           { "param": "HP Freq", "enable": {"param": "HP Enable", "off": "Off", "on": "On"} },
+    "lpf":           { "param": "LP Freq", "enable": {"param": "LP Enable", "off": "Off", "on": "On"} },
+    "eq_in":         { "param": "EQ Enable", "states": {"off": "Off", "on": "On"} },
+    "hf_gain":       { "param": "HF Gain" },
+    "hf_freq":       { "param": "HF Freq" },
+    "hf_type":       { "param": "HF Shelf", "states": {"bell": "Off", "shelf": "On"} },
+    "hmf_gain":      { "param": "HMF Gain" },
+    "hmf_freq":      { "param": "HMF Freq" },
+    "lmf_gain":      { "param": "LMF Gain" },
+    "lmf_freq":      { "param": "LMF Freq" },
+    "lf_gain":       { "param": "LF Gain" },
+    "lf_freq":       { "param": "LF Freq" },
+    "lf_type":       { "param": "LF Shelf", "states": {"bell": "Off", "shelf": "On"} },
+    "comp_in":       { "param": "L/C Enable", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":   { "param": "L/C THR" },
+    "comp_ratio":    { "param": "L/C RAT", "texts": {"Limit": "inf"} },
+    "comp_release":  { "param": "L/C REL", "texts": {"Auto": "auto"} },
+    "comp_fast":     { "param": "L/C FAST", "states": {"off": "Off", "on": "On"} },
+    "gate_in":       { "param": "Gate Enable", "states": {"off": "Off", "on": "On"} },
+    "gate_thresh":   { "param": "G/E THR" },
+    "gate_range":    { "param": "G/E RGE" },
+    "gate_release":  { "param": "G/E REL" },
+    "gate_fast":     { "param": "G/E FAST", "states": {"off": "Off", "on": "On"} }
+  }
+}

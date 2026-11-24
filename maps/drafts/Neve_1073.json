@@ -1,0 +1,28 @@
+{
+  "pluginId": "TODO: LUNA plugin id (probe-strips.mjs prints it)",
+  "name": "Neve 1073",
+  "domain": "cs",
+  "mode": "TODO: \"real\" for UA plugins, \"table\" for others",
+  "reaSixty": {
+    "match": "UADx Neve 1073 Preamp and EQ (Universal Audio",
+    "original": null
+  },
+  "notes": [
+    "Drafted from Rea-Sixty user_plugins.json. Check every line against the plugin in LUNA.",
+    "Add switches (eq_in, comp_in, hf_type …) with \"states\", and \"scale\": 1000 for knobs shown in kHz."
+  ],
+  "controls": {
+    "hpf": {
+      "param": "HP Filt"
+    },
+    "out": {
+      "param": "Level"
+    },
+    "in_trim": {
+      "param": "Line Gain"
+    }
+  },
+  "unmappedReaSixtyControls": [
+    "linkIdx 5 -> Level"
+  ]
+}

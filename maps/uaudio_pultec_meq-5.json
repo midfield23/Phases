@@ -1,0 +1,13 @@
+{
+  "pluginId": "uaudio_pultec_meq-5",
+  "name": "Pultec MEQ-5",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Peaks and dip are 0-10 knob positions, not dB, so the EQ itself does not carry: only in/out and the output level."
+  ],
+  "controls": {
+    "eq_in":  { "param": "Enable", "states": {"off": "Out", "on": "In"} },
+    "out":    { "param": "Output", "table": true }
+  }
+}

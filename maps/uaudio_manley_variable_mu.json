@@ -1,0 +1,14 @@
+{
+  "pluginId": "uaudio_manley_variable_mu",
+  "name": "Manley Variable Mu",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Threshold, attack and output are knob positions and recovery is in words (Slo ... Fast): none of them mean anything on other compressors. They come back as you left them when you return to the Variable Mu, as do Comp/Limit, the matrix and link settings.",
+    "The L Bypass switch (In / Bypass) stands in for the compressor's in/out, with Ctrl Link moving R with it. Mix is read through a measured table."
+  ],
+  "controls": {
+    "comp_in":     { "param": "L Bypass", "states": {"off": "Bypass", "on": "In"} },
+    "comp_mix":    { "param": "Mix", "table": true }
+  }
+}

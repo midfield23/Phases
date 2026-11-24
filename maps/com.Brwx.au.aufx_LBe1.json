@@ -1,0 +1,13 @@
+{
+  "pluginId": "com.Brwx.au.aufx_LBe1",
+  "name": "Lindell PEX-500",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs.",
+    "A Pultec-style EQ with mid/side copies: boost/attenuation are 0-10 positions, not dB, and it has no filters, so only EQ in/out carries."
+  ],
+  "controls": {
+    "eq_in":  { "param": "EQ In", "states": {"off": "Off", "on": "On"} }
+  }
+}

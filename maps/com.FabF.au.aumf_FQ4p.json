@@ -1,0 +1,70 @@
+{
+  "pluginId": "com.FabF.au.aumf_FQ4p",
+  "name": "Pro-Q 4",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs.",
+    "Bands go anywhere with any shape: reading takes the bands in use (cuts become the filters; the biggest boosts and cuts, up to four, become the shared bands); writing puts each of another strip's bands on a free band and switches the rest off. One band's knobs are measured for all of them.",
+    "Shape is read by its step (its label is blank): 0 Bell, 1 Low Shelf, 2 Low Cut, 3 High Shelf, 4 High Cut; notch, band pass and tilt shapes are not carried. Check the shelf/cut steps by eye after a swap.",
+    "Dynamic EQ, stereo placement and slopes are not carried."
+  ],
+  "controls": {
+    "out":       { "param": "Output Level" },
+    "hpf":       { "flex": true },
+    "lpf":       { "flex": true },
+    "lf_gain":   { "flex": true },
+    "lf_freq":   { "flex": true },
+    "lf_type":   { "flex": true },
+    "lmf_gain":  { "flex": true },
+    "lmf_freq":  { "flex": true },
+    "lmf_q":     { "flex": true },
+    "hmf_gain":  { "flex": true },
+    "hmf_freq":  { "flex": true },
+    "hmf_q":     { "flex": true },
+    "hf_gain":   { "flex": true },
+    "hf_freq":   { "flex": true },
+    "hf_type":   { "flex": true }
+  },
+  "flex": {
+      "tables": {
+          "freq": "Band 1 Frequency",
+          "gain": "Band 1 Gain",
+          "q": "Band 1 Q"
+      },
+      "shapes": {
+          "bell": 0,
+          "lowShelf": 1,
+          "lowCut": 2,
+          "highShelf": 3,
+          "highCut": 4
+      },
+      "shapeSteps": 10,
+    "bands": [
+      {"used": "Band 1 Used", "on": "Band 1 Enabled", "freq": "Band 1 Frequency", "gain": "Band 1 Gain", "q": "Band 1 Q", "shape": "Band 1 Shape"},
+      {"used": "Band 2 Used", "on": "Band 2 Enabled", "freq": "Band 2 Frequency", "gain": "Band 2 Gain", "q": "Band 2 Q", "shape": "Band 2 Shape"},
+      {"used": "Band 3 Used", "on": "Band 3 Enabled", "freq": "Band 3 Frequency", "gain": "Band 3 Gain", "q": "Band 3 Q", "shape": "Band 3 Shape"},
+      {"used": "Band 4 Used", "on": "Band 4 Enabled", "freq": "Band 4 Frequency", "gain": "Band 4 Gain", "q": "Band 4 Q", "shape": "Band 4 Shape"},
+      {"used": "Band 5 Used", "on": "Band 5 Enabled", "freq": "Band 5 Frequency", "gain": "Band 5 Gain", "q": "Band 5 Q", "shape": "Band 5 Shape"},
+      {"used": "Band 6 Used", "on": "Band 6 Enabled", "freq": "Band 6 Frequency", "gain": "Band 6 Gain", "q": "Band 6 Q", "shape": "Band 6 Shape"},
+      {"used": "Band 7 Used", "on": "Band 7 Enabled", "freq": "Band 7 Frequency", "gain": "Band 7 Gain", "q": "Band 7 Q", "shape": "Band 7 Shape"},
+      {"used": "Band 8 Used", "on": "Band 8 Enabled", "freq": "Band 8 Frequency", "gain": "Band 8 Gain", "q": "Band 8 Q", "shape": "Band 8 Shape"},
+      {"used": "Band 9 Used", "on": "Band 9 Enabled", "freq": "Band 9 Frequency", "gain": "Band 9 Gain", "q": "Band 9 Q", "shape": "Band 9 Shape"},
+      {"used": "Band 10 Used", "on": "Band 10 Enabled", "freq": "Band 10 Frequency", "gain": "Band 10 Gain", "q": "Band 10 Q", "shape": "Band 10 Shape"},
+      {"used": "Band 11 Used", "on": "Band 11 Enabled", "freq": "Band 11 Frequency", "gain": "Band 11 Gain", "q": "Band 11 Q", "shape": "Band 11 Shape"},
+      {"used": "Band 12 Used", "on": "Band 12 Enabled", "freq": "Band 12 Frequency", "gain": "Band 12 Gain", "q": "Band 12 Q", "shape": "Band 12 Shape"},
+      {"used": "Band 13 Used", "on": "Band 13 Enabled", "freq": "Band 13 Frequency", "gain": "Band 13 Gain", "q": "Band 13 Q", "shape": "Band 13 Shape"},
+      {"used": "Band 14 Used", "on": "Band 14 Enabled", "freq": "Band 14 Frequency", "gain": "Band 14 Gain", "q": "Band 14 Q", "shape": "Band 14 Shape"},
+      {"used": "Band 15 Used", "on": "Band 15 Enabled", "freq": "Band 15 Frequency", "gain": "Band 15 Gain", "q": "Band 15 Q", "shape": "Band 15 Shape"},
+      {"used": "Band 16 Used", "on": "Band 16 Enabled", "freq": "Band 16 Frequency", "gain": "Band 16 Gain", "q": "Band 16 Q", "shape": "Band 16 Shape"},
+      {"used": "Band 17 Used", "on": "Band 17 Enabled", "freq": "Band 17 Frequency", "gain": "Band 17 Gain", "q": "Band 17 Q", "shape": "Band 17 Shape"},
+      {"used": "Band 18 Used", "on": "Band 18 Enabled", "freq": "Band 18 Frequency", "gain": "Band 18 Gain", "q": "Band 18 Q", "shape": "Band 18 Shape"},
+      {"used": "Band 19 Used", "on": "Band 19 Enabled", "freq": "Band 19 Frequency", "gain": "Band 19 Gain", "q": "Band 19 Q", "shape": "Band 19 Shape"},
+      {"used": "Band 20 Used", "on": "Band 20 Enabled", "freq": "Band 20 Frequency", "gain": "Band 20 Gain", "q": "Band 20 Q", "shape": "Band 20 Shape"},
+      {"used": "Band 21 Used", "on": "Band 21 Enabled", "freq": "Band 21 Frequency", "gain": "Band 21 Gain", "q": "Band 21 Q", "shape": "Band 21 Shape"},
+      {"used": "Band 22 Used", "on": "Band 22 Enabled", "freq": "Band 22 Frequency", "gain": "Band 22 Gain", "q": "Band 22 Q", "shape": "Band 22 Shape"},
+      {"used": "Band 23 Used", "on": "Band 23 Enabled", "freq": "Band 23 Frequency", "gain": "Band 23 Gain", "q": "Band 23 Q", "shape": "Band 23 Shape"},
+      {"used": "Band 24 Used", "on": "Band 24 Enabled", "freq": "Band 24 Frequency", "gain": "Band 24 Gain", "q": "Band 24 Q", "shape": "Band 24 Shape"}
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "pluginId": "com.Soni.au.aufx_sChn",
+  "name": "smart:Chain",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: knobs report only their 0-1 position, so values go through tables measured with tools/build-table.mjs.",
+    "Bands go anywhere with any shape: reading takes the bands in use (cuts become the filters; the biggest boosts and cuts, up to four, become the shared bands); writing puts each of another strip's bands on a free band and switches the rest off. One band's knobs are measured for all of them.",
+    "Only the EQ user bands, the compressor's threshold/ratio/release, EQ in and output carry; the learned settings, style knobs, gate, de-harsher, saturator and rider do not. Type labels confirmed by the table of 2026-11-23 ('flat top' and 'tilt' are not carried)."
+  ],
+  "controls": {
+    "out":           { "param": "Output Gain" },
+    "eq_in":         { "param": "EQ On/Off", "states": {"off": "Off", "on": "On"} },
+    "comp_in":       { "param": "Compressor On/Off", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":   { "param": "Compressor Threshold" },
+    "comp_ratio":    { "param": "Compressor Ratio" },
+    "comp_release":  { "param": "Compressor Release Time" },
+    "hpf":           { "flex": true },
+    "lpf":           { "flex": true },
+    "lf_gain":       { "flex": true },
+    "lf_freq":       { "flex": true },
+    "lf_type":       { "flex": true },
+    "lmf_gain":      { "flex": true },
+    "lmf_freq":      { "flex": true },
+    "lmf_q":         { "flex": true },
+    "hmf_gain":      { "flex": true },
+    "hmf_freq":      { "flex": true },
+    "hmf_q":         { "flex": true },
+    "hf_gain":       { "flex": true },
+    "hf_freq":       { "flex": true },
+    "hf_type":       { "flex": true }
+  },
+  "flex": {
+      "tables": {
+          "freq": "EQ Band 1 - Frequency",
+          "gain": "EQ Band 1 - Gain",
+          "q": "EQ Band 1 - Quality",
+          "shape": "EQ Band 1 - Type"
+      },
+      "shapes": {
+          "bell": "bell",
+          "lowShelf": "lowshelf",
+          "highShelf": "highshelf",
+          "lowCut": "lowcut",
+          "highCut": "highcut"
+      },
+    "bands": [
+      {"on": "EQ Band 1 - On/Off", "freq": "EQ Band 1 - Frequency", "gain": "EQ Band 1 - Gain", "q": "EQ Band 1 - Quality", "shape": "EQ Band 1 - Type"},
+      {"on": "EQ Band 2 - On/Off", "freq": "EQ Band 2 - Frequency", "gain": "EQ Band 2 - Gain", "q": "EQ Band 2 - Quality", "shape": "EQ Band 2 - Type"},
+      {"on": "EQ Band 3 - On/Off", "freq": "EQ Band 3 - Frequency", "gain": "EQ Band 3 - Gain", "q": "EQ Band 3 - Quality", "shape": "EQ Band 3 - Type"},
+      {"on": "EQ Band 4 - On/Off", "freq": "EQ Band 4 - Frequency", "gain": "EQ Band 4 - Gain", "q": "EQ Band 4 - Quality", "shape": "EQ Band 4 - Type"},
+      {"on": "EQ Band 5 - On/Off", "freq": "EQ Band 5 - Frequency", "gain": "EQ Band 5 - Gain", "q": "EQ Band 5 - Quality", "shape": "EQ Band 5 - Type"},
+      {"on": "EQ Band 6 - On/Off", "freq": "EQ Band 6 - Frequency", "gain": "EQ Band 6 - Gain", "q": "EQ Band 6 - Quality", "shape": "EQ Band 6 - Type"},
+      {"on": "EQ Band 7 - On/Off", "freq": "EQ Band 7 - Frequency", "gain": "EQ Band 7 - Gain", "q": "EQ Band 7 - Quality", "shape": "EQ Band 7 - Type"},
+      {"on": "EQ Band 8 - On/Off", "freq": "EQ Band 8 - Frequency", "gain": "EQ Band 8 - Gain", "q": "EQ Band 8 - Quality", "shape": "EQ Band 8 - Type"},
+      {"on": "EQ Band 9 - On/Off", "freq": "EQ Band 9 - Frequency", "gain": "EQ Band 9 - Gain", "q": "EQ Band 9 - Quality", "shape": "EQ Band 9 - Type"},
+      {"on": "EQ Band 10 - On/Off", "freq": "EQ Band 10 - Frequency", "gain": "EQ Band 10 - Gain", "q": "EQ Band 10 - Quality", "shape": "EQ Band 10 - Type"},
+      {"on": "EQ Band 11 - On/Off", "freq": "EQ Band 11 - Frequency", "gain": "EQ Band 11 - Gain", "q": "EQ Band 11 - Quality", "shape": "EQ Band 11 - Type"},
+      {"on": "EQ Band 12 - On/Off", "freq": "EQ Band 12 - Frequency", "gain": "EQ Band 12 - Gain", "q": "EQ Band 12 - Quality", "shape": "EQ Band 12 - Type"}
+    ]
+  }
+}

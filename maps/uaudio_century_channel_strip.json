@@ -1,0 +1,22 @@
+{
+  "pluginId": "uaudio_century_channel_strip",
+  "name": "Century Tube",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. EQ, Mid Freq and Output report 0-32768 instead of units, so they are measured (table: true).",
+    "The compressor is one 0-10 'Compression' knob, not mapped. Level is a 0-10 knob, not mapped."
+  ],
+  "controls": {
+    "out":       { "param": "Output", "table":true },
+    "polarity":  { "param": "Phase", "states": {"off": "Normal", "on": "Inverted"} },
+    "hpf":       { "param": "Low Cut", "offText": "Off" },
+    "eq_in":     { "param": "EQ In", "states": {"off": "Out", "on": "In"} },
+    "hf_gain":   { "param": "High Shelf", "table":true },
+    "hf_type":   { "fixed": "shelf" },
+    "hmf_gain":  { "param": "Mid Gain", "table":true },
+    "hmf_freq":  { "param": "Mid Freq", "table":true },
+    "lf_gain":   { "param": "Low Shelf", "table":true },
+    "lf_type":   { "fixed": "shelf" }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "pluginId": "com.Brwx.au.aumf_ameq",
+  "name": "AMEK EQ 200",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: every knob reports only its 0-1 position, so values go through a table measured with tools/build-table.mjs.",
+    "Mapped on channel 1 (keep Param Link on). Five bands into four: LF = low, MF = low mid, HMF = high mid, HF = high; LMF is not mapped. The Range switches are not mapped (leave them on Full).",
+    "Each band and filter has its own In switch: a band that is out reads as 0 dB, and setting 0 dB takes it out. (Labels confirmed by the table of 2026-11-23.)"
+  ],
+  "controls": {
+    "in_trim":   { "param": "Input Gain" },
+    "out":       { "param": "Output Gain" },
+    "eq_in":     { "param": "Bypass 1", "states": {"off": "Out", "on": "In"} },
+    "hpf":       { "param": "HP Freq 1", "enable": {"param": "HP Bypass 1", "off": "Out", "on": "In"} },
+    "lpf":       { "param": "LP Freq 1", "enable": {"param": "LP Bypass 1", "off": "Out", "on": "In"} },
+    "lf_gain":   { "param": "LF Gain 1", "enable": {"param": "LF Bypass 1", "off": "Out", "on": "In", "offValue": 0} },
+    "lf_freq":   { "param": "LF Freq 1" },
+    "lmf_gain":  { "param": "MF Gain 1", "enable": {"param": "MF Bypass 1", "off": "Out", "on": "In", "offValue": 0} },
+    "lmf_freq":  { "param": "MF Freq 1" },
+    "lmf_q":     { "param": "MF Q 1" },
+    "hmf_gain":  { "param": "HMF Gain 1", "enable": {"param": "HMF Bypass 1", "off": "Out", "on": "In", "offValue": 0} },
+    "hmf_freq":  { "param": "HMF Freq 1" },
+    "hmf_q":     { "param": "HMF Q 1" },
+    "hf_gain":   { "param": "HF Gain 1", "enable": {"param": "HF Bypass 1", "off": "Out", "on": "In", "offValue": 0} },
+    "hf_freq":   { "param": "HF Freq 1" }
+  }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phases</title>
+  <style>
+    :root { color-scheme: dark;
+      --bg: #1c1d1f; --bar: #26272a; --well: #121315; --raised: #232427; --line: #2e2f33; --line2: #333438;
+      --text: #e6e6e8; --dim: #9a9ba0; --faint: #8d8e93; --label: #b9babe;
+      --orange: #f0a23b; --orange-ink: #1b1b1d; --orange-edge: #6b4a1c;
+      --blue: #4ea3ff; --blue-bg: #13243a; --blue-ink: #a9c7e8; --bad: #ff7a70;
+      --cond: "Helvetica Neue", -apple-system, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 13px -apple-system, "Helvetica Neue", sans-serif; user-select: none; }
+    button, select, input { font: inherit; color: inherit; }
+    button { cursor: pointer; background: transparent; border: 0; padding: 0; }
+    button:disabled { cursor: default; opacity: .45; }
+    .cond { font-family: var(--cond); font-stretch: condensed; font-weight: 700; }
+    svg { display: block; }
+
+    .head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    .head .swatch { width: 4px; height: 26px; border-radius: 2px; background: var(--faint); }
+    .head .name { font-size: 17px; }
+    .head .sub { font-size: 11px; color: var(--dim); }
+    .head #status { margin-left: auto; font-size: 11px; color: var(--dim); }
+
+    .bar { display: flex; align-items: center; justify-content: space-between; background: var(--bar); padding: 6px 14px; }
+    .bar .t { font-size: 12px; letter-spacing: .08em; color: var(--label); }
+    .bar .r { font-size: 11px; color: var(--dim); }
+    .bar .r.blue { color: var(--blue-ink); }
+    .bar .r { margin-left: auto; margin-right: 10px; white-space: nowrap; }
+    .rowsec { border-bottom: 1px solid var(--line); }
+    .rowsec .bar { cursor: default; }
+    .rowsec.focus .bar .t { color: var(--orange); }
+    .rowsec .bar .t::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; background: transparent; }
+    .rowsec.focus .bar .t::before { background: var(--orange); }
+
+    .favs { display: flex; flex-direction: column; gap: 4px; padding: 6px 10px 10px; }
+    .line { display: flex; align-items: center; gap: 6px; }
+    .line .n { width: 14px; text-align: right; font-size: 11px; color: var(--faint); flex: none; }
+    .fs { flex: 1; min-width: 0; height: 40px; display: flex; flex-direction: row; align-items: center; background: var(--raised); border: 1px solid var(--line2); border-radius: 4px; overflow: hidden; }
+    .fs:hover { border-color: #5a5b60; }
+    .fs .nm { flex: 1; min-width: 0; height: 100%; padding: 0 10px; text-align: left; display: flex; flex-direction: column; justify-content: center; }
+    .fs .nm b { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .fs .nm small { font-size: 11px; color: var(--faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .fs .note { flex: none; font-size: 10px; letter-spacing: .05em; color: var(--faint); border: 1px solid var(--line2); border-radius: 3px; padding: 1px 4px; margin-right: 6px; }
+    .fs .pw { flex: none; width: 30px; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--orange); }
+    .fs.bypassed .pw { color: var(--faint); }
+    .fs .open { flex: none; height: 26px; padding: 0 8px; margin-right: 6px; border: 1px solid var(--orange-edge); border-radius: 4px; font-size: 12px; color: var(--orange); }
+    .fs.live .open, .fs:not(.on) .open { border-color: var(--line2); color: var(--label); }
+    .fs .keepfav { flex: none; height: 26px; padding: 0 8px; margin-right: 6px; border: 1px solid var(--orange-edge); border-radius: 4px; font-size: 12px; color: var(--orange); font-weight: 600; }
+    .fs.on .nm { padding-left: 2px; }
+    .fs.on .nm:disabled, .fs.live .nm:disabled { opacity: 1; }
+    .fs.on.bypassed { border-color: var(--line2); box-shadow: inset 3px 0 0 var(--faint); }
+    .fs.on.bypassed .nm b { color: var(--dim); }
+    .fs.on.bypassed .nm small { color: var(--faint); }
+    .fs .tool { flex: none; width: 30px; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--dim); border-left: 1px solid var(--line2); opacity: 0; }
+    .fs:hover .tool, .fs:focus-within .tool { opacity: 1; }
+    .fs .ab { flex: none; width: 20px; height: 20px; margin-left: 8px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 11px; background: var(--line); color: var(--label); }
+    .fs.on { background: var(--raised); border-color: var(--orange-edge); box-shadow: inset 3px 0 0 var(--orange); }
+    .fs.on .nm b { color: var(--text); }
+    .fs.on .nm small { color: var(--orange); }
+    .fs.on .nm b { font-weight: 700; }
+    .fs.on .note { color: var(--orange); border-color: var(--orange-edge); }
+    .fs.on .tool { color: var(--dim); border-left-color: var(--line2); }
+    .fs.live { background: var(--blue-bg); border-color: var(--blue); }
+    .fs.live .ab { background: var(--blue); color: #0e1a29; }
+    .fs.live .nm small { color: var(--blue-ink); }
+    .add { flex: 1; height: 32px; border-radius: 4px; background: var(--well); border: 1px dashed #34353a; color: var(--faint); font-size: 18px; line-height: 1; }
+    .add:hover { color: var(--orange); border-color: #4a4b50; }
+    .add.on { border: 1px solid var(--orange); color: var(--orange); }
+    .bar .navs { display: flex; gap: 4px; }
+    .bar .navs button { width: 26px; height: 22px; border: 1px solid var(--line2); border-radius: 4px; background: var(--raised); display: flex; align-items: center; justify-content: center; color: var(--label); }
+
+    .ins { display: flex; align-items: center; gap: 6px; height: 34px; margin: 8px 10px 0; padding: 0 4px 0 2px; background: var(--well); border: 1px solid var(--orange-edge); border-radius: 4px; }
+    .ins.shared { border-style: solid; border-color: var(--orange-edge); box-shadow: inset 3px 0 0 var(--orange-edge); }
+    .ins.none { margin: 6px 10px 0 30px; height: auto; padding: 6px 10px !important; border: 1px dashed #34353a; color: var(--dim); padding: 0 10px; font-size: 12px; }
+    .ins .pw { flex: none; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; color: var(--orange); }
+    .ins.off .pw { color: #6c6d72; }
+    .ins .nm { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+    .ins .nm b { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ins.off .nm b { color: var(--dim); }
+    .ins .nm small { font-size: 11px; color: var(--faint); }
+    .ins .open { flex: none; height: 26px; padding: 0 8px; border: 1px solid var(--line2); border-radius: 4px; font-size: 12px; color: var(--label); }
+
+    #picker { display: none; margin: 0 10px 10px; border: 1px solid #3a3b40; border-radius: 6px; background: var(--raised); }
+    #picker.show { display: block; }
+    #picker .top { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border-bottom: 1px solid var(--line2); }
+    #picker .top .t { font-size: 12px; letter-spacing: .06em; color: var(--label); }
+    #picker .top button { color: #a9aaaf; font-size: 12px; }
+    #picker .tabs { display: flex; gap: 4px; padding: 8px 10px 4px; }
+    #picker .tabs button { border: 1px solid var(--line2); border-radius: 4px; padding: 4px 8px; font-size: 12px; color: var(--label); }
+    #picker .tabs button.on { border-color: var(--orange); background: #3a2c16; color: #ffcf87; }
+    #picker .search { margin: 4px 10px 6px; display: flex; align-items: center; gap: 6px; background: #151618; border: 1px solid var(--line2); border-radius: 4px; padding: 5px 8px; color: var(--dim); }
+    #picker .search input { flex: 1; border: 0; outline: 0; background: transparent; color: var(--text); user-select: text; }
+    #list { display: flex; flex-direction: column; padding: 0 4px 6px; max-height: 220px; overflow: auto; }
+    #list button { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 7px 8px; border-radius: 4px; text-align: left; }
+    #list button:hover { background: #2c2d31; }
+    #list small { font-size: 11px; color: var(--faint); white-space: nowrap; }
+    #list .empty { padding: 8px; color: var(--dim); font-size: 12px; }
+
+    .lower { padding: 10px 10px 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
+    .cmp { display: none; flex-direction: column; gap: 6px; margin: 8px 10px 0; }
+    .cmp.show { display: flex; }
+    .cmp .note { font-size: 11px; color: var(--blue-ink); }
+    .cmp .note:empty { display: none; }
+    .cmp .pair { display: flex; gap: 6px; }
+    .cmp .side { flex: 1; text-align: center; border: 1px solid var(--line2); border-radius: 4px; padding: 7px 6px; background: var(--well); }
+    .cmp .side div:first-child { font-size: 11px; color: var(--dim); }
+    .cmp .side div:last-child { font-size: 16px; color: var(--dim); }
+    .cmp .side.live { border-color: var(--blue); background: var(--blue-bg); }
+    .cmp .side.live div:first-child { color: var(--blue-ink); }
+    .cmp .side.live div:last-child { color: var(--text); }
+    .flip { height: 40px; border: 1px solid var(--blue); border-radius: 4px; background: #1b3352; font-size: 14px; letter-spacing: .06em; }
+    .cmp .keeps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .cmp .keeps button { height: 34px; border: 1px solid var(--line2); border-radius: 4px; background: var(--raised); padding: 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .opts { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; color: var(--dim); font-size: 12px; }
+    .opts label { display: flex; align-items: center; gap: 4px; color: var(--text); }
+    .opts input { accent-color: var(--orange); }
+    .opts select { margin-left: auto; background: var(--raised); color: var(--text); border: 1px solid var(--line2); border-radius: 4px; padding: 4px 6px; }
+    #msg { font-size: 12px; color: var(--dim); white-space: pre-line; overflow-wrap: anywhere; min-height: 32px; }
+    #msg.bad { color: var(--bad); }
+    #details .dbar { display: flex; gap: 12px; }
+    #details button.link { background: none; border: 0; padding: 2px 0; color: var(--dim); font: inherit; font-size: 11px; text-decoration: underline; cursor: pointer; }
+    #details #copyDetails, #details pre { display: none; }
+    #details.open #copyDetails { display: inline; }
+    #details.open pre { display: block; max-height: 220px; overflow: auto; margin: 4px 0 0; padding: 6px; background: #111114; border-radius: 3px; font: 10px/1.35 Menlo, monospace; color: #b8b8c0; white-space: pre; user-select: text; }
+    #build { font-size: 11px; color: #5c5c64; padding: 0 10px 10px; }
+    body.busy button, body.busy select, body.busy input { pointer-events: none; }
+    body.busy .favs, body.busy .lower, body.busy .ins { opacity: .7; }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <div class="swatch" id="swatch"></div>
+    <div><div class="name cond" id="track">—</div></div>
+    <span id="status">connecting…</span>
+  </div>
+
+  <section class="rowsec" data-role="eq">
+    <div class="bar"><span class="t cond">EQ</span><span class="r where"></span>
+      <span class="navs">
+        <button class="prev" aria-label="Previous EQ favourite" title="Previous favourite (← when this row is selected)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="next" aria-label="Next EQ favourite" title="Next favourite (→ when this row is selected)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </span>
+    </div>
+    <div class="ins"></div>
+    <div class="cmp">
+      <div class="pair">
+        <div class="side sideA"><div>A · original</div><div class="cond"></div></div>
+        <div class="side sideB"><div>B · candidate</div><div class="cond"></div></div>
+      </div>
+      <div class="note cmpNote"></div>
+      <button class="flip cond">FLIP A / B</button>
+      <div class="keeps"><button class="keepA">Keep A</button><button class="keepB">Keep B</button></div>
+    </div>
+    <div class="favs"></div>
+  </section>
+  <section class="rowsec" data-role="dyn">
+    <div class="bar"><span class="t cond">COMPRESSOR</span><span class="r where"></span>
+      <span class="navs">
+        <button class="prev" aria-label="Previous compressor favourite" title="Previous favourite (← when this row is selected)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="next" aria-label="Next compressor favourite" title="Next favourite (→ when this row is selected)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </span>
+    </div>
+    <div class="ins"></div>
+    <div class="cmp">
+      <div class="pair">
+        <div class="side sideA"><div>A · original</div><div class="cond"></div></div>
+        <div class="side sideB"><div>B · candidate</div><div class="cond"></div></div>
+      </div>
+      <div class="note cmpNote"></div>
+      <button class="flip cond">FLIP A / B</button>
+      <div class="keeps"><button class="keepA">Keep A</button><button class="keepB">Keep B</button></div>
+    </div>
+    <div class="favs"></div>
+  </section>
+  <div id="picker">
+    <div class="top"><span class="t cond" id="pickTitle">FAVOURITE</span><button id="pickClose">Cancel</button></div>
+    <div class="tabs"><button id="tabMapped">Mapped</button><button id="tabAll">All plugins</button></div>
+    <label class="search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+      <input id="search" placeholder="Search" aria-label="Search plugins">
+    </label>
+    <div id="list"></div>
+  </div>
+
+  <div class="lower">
+    <div class="opts">
+      <span class="cond" style="letter-spacing:.06em">ON SWITCH</span>
+      <select id="mode" aria-label="Mode">
+        <option value="copy">Copy my settings</option>
+        <option value="own">Each plugin as left</option>
+      </select>
+    </div>
+    <div id="msg"></div>
+    <div id="details"><div class="dbar"><button id="detailsBtn" class="link">Details</button><button id="copyDetails" class="link">Copy</button></div><pre id="detailsText"></pre></div>
+  </div>
+  <div id="build"></div>
+
+  <script src="vendor/luna.global.js"></script>
+  <script src="engine.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "pluginId": "uaudio_teletronix_la-2a_gray",
+  "name": "LA-2A Gray",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Peak Reduction and Gain are 0-100 knob positions reporting raw numbers, read through a measured table. They're LA-2A-family controls: they carry between the LA-2, LA-2A Gray, LA-2A Silver and LA-2A Tube only, and are kept for later on anything else. Comp/Limit carries within the family and to the LA-3A. Emphasis comes back as you left it.",
+    "Power stands in for the compressor's in/out."
+  ],
+  "controls": {
+    "comp_in":        { "param": "Power", "states": {"off": "Off", "on": "On"} },
+    "opto_reduction": { "param": "Peak Reduct", "table": true, "texts": {"Min": 0, "Max": 100} },
+    "opto_gain":      { "param": "Gain", "table": true, "texts": {"Min": 0, "Max": 100} },
+    "opto_mode":      { "param": "Comp/Limit", "states": {"comp": "Comp", "limit": "Limit"} },
+    "comp_mix":       { "param": "Mix", "table": true }
+  }
+}

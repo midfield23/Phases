@@ -1,0 +1,26 @@
+{
+  "pluginId": "uaudio_neve_1073",
+  "name": "Neve 1073",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Replaces the draft from Rea-Sixty. EQ gains and Output report raw numbers, so they are measured (table: true); the rest are stepped and read from their labels.",
+    "The high band is a fixed 12 kHz shelf and the low band a shelf; the mid (360 Hz to 7.2 kHz) is the high mid. A band frequency of Off reads as off and only carries to another 1073.",
+    "Level (the output level after the EQ) is not mapped; Output is."
+  ],
+  "controls": {
+    "in_trim":   { "param": "Line Gain" },
+    "out":       { "param": "Output", "table": true },
+    "polarity":  { "param": "Phase", "states": {"off": "Normal", "on": "Inverted"} },
+    "hpf":       { "param": "HP Filt", "offText": "Off" },
+    "eq_in":     { "param": "EQL", "states": {"off": "Out", "on": "In"} },
+    "hf_gain":   { "param": "HF Gain", "table": true },
+    "hf_freq":   { "fixed": 12000 },
+    "hf_type":   { "fixed": "shelf" },
+    "hmf_gain":  { "param": "MF Gain", "table": true },
+    "hmf_freq":  { "param": "MF Freq", "offText": "Off" },
+    "lf_gain":   { "param": "LF Gain", "table": true },
+    "lf_freq":   { "param": "LF Freq", "offText": "Off" },
+    "lf_type":   { "fixed": "shelf" }
+  }
+}

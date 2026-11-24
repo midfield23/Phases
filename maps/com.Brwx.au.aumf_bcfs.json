@@ -1,0 +1,40 @@
+{
+  "pluginId": "com.Brwx.au.aumf_bcfs",
+  "name": "bx_console Focusrite SC",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: every knob reports only its 0-1 position, so values go through a table measured with tools/build-table.mjs. Replaces the draft from Rea-Sixty.",
+    "HP and LP filters and the EQ bands have their own On switches: a band that is off reads as 0 dB. The LMF/HMF x3 switches move those bands up (read where they really are, used only when a value needs them); the HPF x3 and LPF /3 are not mapped.",
+    "EQ Position 'Post Dyn' means dynamics before EQ; the other is 'Pre Dyn' (confirmed by the table of 2026-11-23). Ratio 'oo : 1' = inf; release 'Auto' carries to other strips' auto. The de-esser, the dynamics-section filters and the gate's hold and attack are not mapped."
+  ],
+  "controls": {
+    "in_trim":       { "param": "In Gain" },
+    "out":           { "param": "Out Gain" },
+    "polarity":      { "param": "Phase", "states": {"off": "Off", "on": "On"} },
+    "dyn_pre_eq":    { "param": "EQ Position", "states": {"off": "Pre Dyn", "on": "Post Dyn"} },
+    "hpf":           { "param": "HPF Frequency", "enable": {"param": "HPF On", "off": "Off", "on": "On"} },
+    "lpf":           { "param": "LPF Frequency", "enable": {"param": "LPF On", "off": "Off", "on": "On"} },
+    "eq_in":         { "param": "All EQ On", "states": {"off": "Off", "on": "On"} },
+    "hf_gain":       { "param": "EQ HF Gain", "enable": {"param": "EQ HF On", "off": "Off", "on": "On", "offValue": 0} },
+    "hf_freq":       { "param": "EQ HF Freq" },
+    "hmf_gain":      { "param": "EQ HMF Gain", "enable": {"param": "EQ HMF On", "off": "Off", "on": "On", "offValue": 0} },
+    "hmf_freq":      { "param": "EQ HMF Freq", "range": {"param": "EQ HMF Freq x3", "off": "Off", "on": "On", "by": 3} },
+    "hmf_q":         { "param": "EQ HMF Q" },
+    "lmf_gain":      { "param": "EQ LMF Gain", "enable": {"param": "EQ LMF On", "off": "Off", "on": "On", "offValue": 0} },
+    "lmf_freq":      { "param": "EQ LMF Freq", "range": {"param": "EQ LMF Freq x3", "off": "Off", "on": "On", "by": 3} },
+    "lmf_q":         { "param": "EQ LMF Q" },
+    "lf_gain":       { "param": "EQ LF Gain", "enable": {"param": "EQ LF On", "off": "Off", "on": "On", "offValue": 0} },
+    "lf_freq":       { "param": "EQ LF Freq" },
+    "comp_in":       { "param": "Comp On", "states": {"off": "Off", "on": "On"} },
+    "comp_thresh":   { "param": "Comp Threshold" },
+    "comp_ratio":    { "param": "Comp Ratio", "texts": {"oo : 1": "inf"} },
+    "comp_release":  { "param": "Comp Release", "texts": {"Auto": "auto"} },
+    "comp_mix":      { "param": "Comp Mix" },
+    "gate_in":       { "param": "Gate On", "states": {"off": "Off", "on": "On"} },
+    "gate_thresh":   { "param": "Gate Threshold" },
+    "gate_range":    { "param": "Gate Range" },
+    "gate_release":  { "param": "Gate Release" },
+    "gate_exp":      { "param": "Gate Expander", "states": {"gate": "Off", "expander": "On"} }
+  }
+}

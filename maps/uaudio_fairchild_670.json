@@ -1,0 +1,18 @@
+{
+  "pluginId": "uaudio_fairchild_670",
+  "name": "Fairchild 670",
+  "domain": "cs",
+  "mode": "real",
+  "notes": [
+    "Probed 2026-11-23. Two channels (L/R); the map writes the L side and relies on Ctrl Link (on by default) to move R with it.",
+    "Threshold (0-10) and Time Constant (1-6) are Fairchild controls: they carry between the 660 and 670 only. Input, balance and DC threshold come back as you left them when you return to the 670.",
+    "Output and Mix report raw knob numbers and are read through a measured table. Power stands in for the compressor's in/out."
+  ],
+  "controls": {
+    "comp_in":     { "param": "Power", "states": {"off": "Off", "on": "On"} },
+    "fc_thresh":   { "param": "L Thresh", "table": true },
+    "fc_time":     { "param": "L TimeCnst" },
+    "out":         { "param": "L Output", "table": true },
+    "comp_mix":    { "param": "Mix", "table": true }
+  }
+}

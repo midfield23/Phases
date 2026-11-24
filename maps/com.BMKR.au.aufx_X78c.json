@@ -1,0 +1,22 @@
+{
+  "pluginId": "com.BMKR.au.aufx_X78c",
+  "name": "Bettermaker EQ232D",
+  "domain": "cs",
+  "mode": "table",
+  "notes": [
+    "Probed 2026-11-23: every knob reports only its 0-1 position, so values go through a table measured with tools/build-table.mjs.",
+    "Mapped on channel 1. EQ1 = low mid, EQ2 = high mid; each has its own IN switch, so a band that is out reads as 0 dB and 0 dB takes it out. The Pultec section's boost/atten are 0-10 positions, not dB, so it is not mapped.",
+    "ENGAGE is the EQ in/out; LVL OUT the output."
+  ],
+  "controls": {
+    "out":       { "param": "LVL OUT 1" },
+    "eq_in":     { "param": "ENGAGE 1", "states": {"off": "OFF", "on": "ON"} },
+    "hpf":       { "param": "HPF FREQ 1", "enable": {"param": "HPF IN 1", "off": "OFF", "on": "ON"} },
+    "lmf_gain":  { "param": "EQ1 GAIN 1", "enable": {"param": "EQ1 IN 1", "off": "OFF", "on": "ON", "offValue": 0} },
+    "lmf_freq":  { "param": "EQ1 FREQ 1" },
+    "lmf_q":     { "param": "EQ1 Q 1" },
+    "hmf_gain":  { "param": "EQ2 GAIN 1", "enable": {"param": "EQ2 IN 1", "off": "OFF", "on": "ON", "offValue": 0} },
+    "hmf_freq":  { "param": "EQ2 FREQ 1" },
+    "hmf_q":     { "param": "EQ2 Q 1" }
+  }
+}

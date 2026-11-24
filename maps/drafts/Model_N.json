@@ -1,0 +1,77 @@
+{
+  "pluginId": "TODO: LUNA plugin id (probe-strips.mjs prints it)",
+  "name": "Model N",
+  "domain": "cs",
+  "mode": "TODO: \"real\" for UA plugins, \"table\" for others",
+  "reaSixty": {
+    "match": "Model N Channel",
+    "original": null
+  },
+  "notes": [
+    "Drafted from Rea-Sixty user_plugins.json. Check every line against the plugin in LUNA.",
+    "Add switches (eq_in, comp_in, hf_type …) with \"states\", and \"scale\": 1000 for knobs shown in kHz.",
+    "CHECK: \"Ratio\" feeds comp_ratio, gate_thresh, gate_exp; keep only the control it really is",
+    "CHECK: \"Threshold\" feeds comp_thresh, gate_range, gate_release, gate_hold; keep only the control it really is",
+    "CHECK: hpf is \"Low Pass\" — looks like the low-pass",
+    "CHECK: lpf is \"High Pass\" — looks like the high-pass"
+  ],
+  "controls": {
+    "comp_ratio": {
+      "param": "Ratio"
+    },
+    "comp_thresh": {
+      "param": "Threshold"
+    },
+    "comp_release": {
+      "param": "Recovery"
+    },
+    "gate_range": {
+      "param": "Threshold"
+    },
+    "gate_thresh": {
+      "param": "Ratio"
+    },
+    "gate_release": {
+      "param": "Threshold"
+    },
+    "gate_hold": {
+      "param": "Threshold"
+    },
+    "gate_exp": {
+      "param": "Ratio"
+    },
+    "hpf": {
+      "param": "Low Pass"
+    },
+    "lpf": {
+      "param": "High Pass"
+    },
+    "in_trim": {
+      "param": "Preamp"
+    },
+    "out": {
+      "param": "MasterGain"
+    },
+    "hf_freq": {
+      "param": "Hi Freq"
+    },
+    "hf_gain": {
+      "param": "Hi Gain"
+    },
+    "hmf_gain": {
+      "param": "Mid Gain"
+    },
+    "hmf_freq": {
+      "param": "Mid Freq"
+    },
+    "lmf_freq": {
+      "param": "Low Freq"
+    },
+    "lmf_gain": {
+      "param": "Low Gain"
+    }
+  },
+  "unmappedReaSixtyControls": [
+    "linkIdx 34 -> Threshold"
+  ]
+}
