@@ -54,7 +54,7 @@ writeFileSync(join(OUT, 'data.js'),
   `// Built by tools/build-addon.mjs from maps/, tables/ and favorites.json.\nwindow.STRIP_DATA = ${JSON.stringify({ maps, tables, favorites })};\nwindow.STRIP_BUILD = ${JSON.stringify(new Date().toLocaleString())};\n`);
 
 // 3. The panel
-for (const f of ['index.html', 'main.js']) copyFileSync(join(ROOT, 'addon-src', f), join(OUT, f));
+for (const f of ['index.html', 'main.js', 'icon.png']) copyFileSync(join(ROOT, 'addon-src', f), join(OUT, f));
 
 // 4. The SDK bundle and the manifest
 const bundle = join(SDK, 'dist', 'luna.global.js');
@@ -77,6 +77,7 @@ writeFileSync(join(OUT, 'manifest.json'), JSON.stringify({
   min_luna_version: '3.1.2',
   engines: ['luna'],
   html: 'index.html',
+  icon: 'icon.png',
   target: 'browser',
   targets: ['browser', 'window'],
   floating: true,
